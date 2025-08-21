@@ -1,60 +1,188 @@
-# CodeIgniter 4 Framework
+# Hospital Management System (HMS)
 
-## What is CodeIgniter?
+A comprehensive, role-based Hospital Management System built with CodeIgniter 4, featuring modern UI design and secure authentication.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Features
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+### 🔐 Role-Based Access Control
+- **Admin**: Full system access, can create IT staff accounts
+- **IT Staff**: Can create and manage employee accounts (doctors, nurses, pharmacists, etc.)
+- **Medical Staff**: Role-specific access to relevant modules
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### 🏥 Core Modules
+- User Authentication & Management
+- Patient Registration & EHR (Electronic Health Records)
+- Billing & Payment Processing
+- Reports & Analytics
+- Laboratory Management
+- Pharmacy & Inventory Control
+- Centralized Database Status
+- Doctor/Nurse Scheduling
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### 🎨 Modern UI/UX
+- Responsive design with Bootstrap 5
+- Beautiful gradient themes
+- Interactive dashboard widgets
+- Mobile-friendly interface
 
-## Important Change with index.php
+## System Requirements
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- PHP 8.0 or higher
+- MySQL 5.7 or higher / MariaDB 10.2 or higher
+- Apache/Nginx web server
+- Composer (for dependency management)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## Installation
 
-**Please** read the user guide for a better explanation of how CI4 works!
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd WebSystem-ITE_Group-8
+```
 
-## Repository Management
+### 2. Install Dependencies
+```bash
+composer install
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### 3. Database Setup
+1. Create a new MySQL database named `hms_database`
+2. Update database configuration in `app/Config/Database.php` if needed
+3. Run migrations to create tables:
+```bash
+php spark migrate
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### 4. Seed Initial Data
+```bash
+php spark db:seed AdminSeeder
+```
+
+### 5. Configure Web Server
+Point your web server's document root to the `public` folder.
+
+### 6. Set Permissions
+Ensure the `writable` folder has write permissions:
+```bash
+chmod -R 755 writable/
+```
+
+## Default Login Credentials
+
+- **Username**: `admin`
+- **Password**: `admin123`
+- **Role**: System Administrator
+
+⚠️ **Important**: Change the default password after first login!
+
+## Usage
+
+### Admin Role
+- Full access to all system modules
+- Can create IT staff accounts
+- System configuration and management
+- User role assignment
+
+### IT Staff Role
+- Create and manage employee accounts
+- Assign roles (doctor, nurse, pharmacist, receptionist)
+- User status management
+- Cannot create admin accounts
+
+### Medical Staff Roles
+- **Doctor**: Patient management, appointments, medical records
+- **Nurse**: Patient care, scheduling, basic records
+- **Pharmacist**: Medication management, inventory
+- **Receptionist**: Patient registration, appointments
+
+## File Structure
+
+```
+app/
+├── Config/           # Configuration files
+├── Controllers/      # Application controllers
+├── Database/         # Migrations and seeders
+├── Filters/          # Request filters
+├── Models/           # Data models
+└── Views/            # View templates
+    ├── auth/         # Authentication views
+    ├── dashboard/    # Dashboard views
+    └── user_management/ # User management views
+```
+
+## Security Features
+
+- Password hashing with PHP's built-in `password_hash()`
+- Session-based authentication
+- Role-based access control
+- Input validation and sanitization
+- CSRF protection
+- SQL injection prevention
+
+## Customization
+
+### Adding New Roles
+1. Update the `role` enum in the users table migration
+2. Modify role hierarchy in `UserModel::hasPermission()`
+3. Update role assignment logic in `UserManagementController`
+
+### Adding New Modules
+1. Create new controllers in `app/Controllers/`
+2. Add routes in `app/Config/Routes.php`
+3. Create corresponding views in `app/Views/`
+4. Update navigation in dashboard
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Database Connection Error**
+   - Verify database credentials in `app/Config/Database.php`
+   - Ensure MySQL service is running
+   - Check database name exists
+
+2. **Permission Denied Errors**
+   - Verify user role assignments
+   - Check role hierarchy in models
+   - Ensure proper session data
+
+3. **Migration Errors**
+   - Check PHP version compatibility
+   - Verify database user permissions
+   - Clear any existing tables if needed
+
+### Debug Mode
+Enable debug mode in `app/Config/Boot/development.php` for detailed error messages.
 
 ## Contributing
 
-We welcome contributions from the community.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## License
 
-## Server Requirements
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## Support
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## Changelog
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+### Version 1.0.0
+- Initial release
+- Basic authentication system
+- Role-based access control
+- User management
+- Dashboard interface
+- Patient management foundation
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+**Note**: This is a development version. For production use, ensure proper security measures, SSL certificates, and regular security updates.
