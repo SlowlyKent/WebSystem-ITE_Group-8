@@ -72,3 +72,1843 @@ in SYSTEMPATH\Filters\Filters.php on line 590.
  5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:31:05 --> mysqli_sql_exception: Table 'hms_database.medicine_batches' doesn't exist in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT SUM(`sto...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`sto...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`sto...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`sto...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-31 12:31:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hms_database.medicine_batches' doesn't exist
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 2 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:31:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hms_database.medicine_batches' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 4 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:31:05 --> [Caused by] mysqli_sql_exception: Table 'hms_database.medicine_batches' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 5 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:31:08 --> mysqli_sql_exception: Table 'hms_database.medicine_batches' doesn't exist in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT SUM(`sto...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`sto...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`sto...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`sto...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-31 12:31:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hms_database.medicine_batches' doesn't exist
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 2 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:31:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hms_database.medicine_batches' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 4 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:31:08 --> [Caused by] mysqli_sql_exception: Table 'hms_database.medicine_batches' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`stock_qty`) AS `stock_qty`
+FROM `medicine_batches`', [], false)
+ 5 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\PharmacistController.php(25): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:37:07 --> mysqli_sql_exception: Duplicate key name 'rx_no' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Database\Migrations\20250831121530_create_prescriptions.php(22): CodeIgniter\Database\Forge->createTable('prescriptions', true)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreatePrescriptions->up()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebSystem-ITE_Group-8\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-08-31 12:38:10 --> mysqli_sql_exception: Unknown column 'contact' in 'field list' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', NULL, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Database\Seeds\PharmacySeeder.php(11): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\Seeder.php(149): App\Database\Seeds\PharmacySeeder->run()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebSystem-ITE_Group-8\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-08-31 12:39:56 --> mysqli_sql_exception: Unknown column 'dob' in 'field list' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', NULL, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Database\Seeds\PharmacySeeder.php(11): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\Seeder.php(149): App\Database\Seeds\PharmacySeeder->run()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebSystem-ITE_Group-8\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-08-31 12:40:23 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', NULL, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Database\Seeds\PharmacySeeder.php(11): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\Seeder.php(149): App\Database\Seeds\PharmacySeeder->run()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebSystem-ITE_Group-8\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-08-31 12:40:49 --> mysqli_sql_exception: Duplicate entry '' for key 'unique_patient_id' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', NULL, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Database\Seeds\PharmacySeeder.php(11): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\Seeder.php(149): App\Database\Seeds\PharmacySeeder->run()
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebSystem-ITE_Group-8\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-08-31 12:41:30 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:41:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:41:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:41:30 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:41:32 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:41:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:41:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:41:32 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:42:40 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:42:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:42:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:42:40 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:42:40 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:42:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:42:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:42:40 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-08-31 12:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 12:43:21 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:43:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:43:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:43:21 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS cnt, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING (COALESCE(SUM(b.stock_qty),0)) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:44:26 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:44:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:26 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:44:26 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:44:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:26 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:44:27 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:44:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:27 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:44:30 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:44:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:44:30 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:45:12 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:45:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:45:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:45:12 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:46:15 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:46:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:15 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:46:37 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:46:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:37 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:46:37 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:46:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:46:37 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:47:00 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-08-31 12:47:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+[Method: GET, Route: pharmacist]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 2 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:47:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 4 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-31 12:47:00 --> [Caused by] mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`, SUM(`b`.`stock_qty`) AS `total_stock`
+FROM `medicines` `m`
+LEFT JOIN `medicine_batches` `b` ON `b`.`medicine_id` = `m`.`id`
+GROUP BY `m`.`id`
+HAVING COALESCE(SUM(b.stock_qty),0) <= `m`.`reorder_level`', [], false)
+ 5 APPPATH\Controllers\PharmacistController.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-31 12:52:46 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 12:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 12:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 12:54:33 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:54:35 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:54:40 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:54:56 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:54:58 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:55:17 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:55:27 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:56:08 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:56:13 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:56:18 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 12:56:20 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:01:05 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:01:09 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:01:39 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:01:55 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:02:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:02:24 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:04:48 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:05:08 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:05:09 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:13:49 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:26:06 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-31 13:29:59 --> User pharmacist_davis logged out
+DEBUG - 2025-08-31 13:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-31 13:32:34 --> User admin logged in successfully
+DEBUG - 2025-08-31 13:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 13:32:48 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:33:49 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:33:57 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:57:19 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:57:20 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 13:57:21 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 13:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 13:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 14:02:13 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 14:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 14:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-31 14:02:55 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-08-31 14:02:55 --> mysqli_sql_exception: Unknown column 'm.reorder_level' in 'having clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.`id`...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`id`...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`id`...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`id`...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PharmacistController.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PharmacistController->index()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PharmacistController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+DEBUG - 2025-08-31 14:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-31 14:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

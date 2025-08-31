@@ -20,6 +20,19 @@ $routes->get('dashboard', 'DashboardController::index');
 $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 
+// Pharmacist dashboard
+$routes->get('pharmacist', 'PharmacistController::index');
+
+// Pharmacist feature routes
+$routes->group('pharmacist', static function($routes) {
+    $routes->get('inventory', 'PharmacistController::inventory');
+    $routes->get('alerts', 'PharmacistController::alerts');
+    $routes->get('reports', 'PharmacistController::reports');
+    $routes->get('lookup', 'PharmacistController::lookup');
+    $routes->get('dispense', 'PharmacistController::dispense');
+    $routes->post('dispense', 'PharmacistController::dispense');
+});
+
 // User Management routes (Admin and IT Staff only)
 $routes->group('user-management', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'UserManagementController::index');
