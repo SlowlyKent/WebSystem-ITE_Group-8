@@ -53,7 +53,13 @@ class AuthController extends Controller
             log_message('info', "User {$username} logged in successfully");
 
             // Redirect based on role
-            return redirect()->to('/dashboard');
+            if ($user['role'] === 'admin') {
+                return redirect()->to('/dashboard'); // admin dashboard
+            } elseif ($user['role'] === 'receptionist') {
+                return redirect()->to('/receptionist/dashboard'); // receptionist dashboard
+            } else {
+                return redirect()->to('/dashboard'); // fallback
+            }
         } else {
             session()->setFlashdata('error', 'Invalid username or password');
             return redirect()->back()->withInput();

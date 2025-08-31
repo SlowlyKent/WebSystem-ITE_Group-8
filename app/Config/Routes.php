@@ -20,6 +20,9 @@ $routes->get('dashboard', 'DashboardController::index');
 $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 
+//Receptionist route
+$routes->get('receptionist/dashboard', 'ReceptionistController::index');
+
 // User Management routes (Admin and IT Staff only)
 $routes->group('user-management', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'UserManagementController::index');
