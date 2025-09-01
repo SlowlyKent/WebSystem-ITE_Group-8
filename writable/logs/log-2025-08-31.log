@@ -1,0 +1,112 @@
+ERROR - 2025-08-31 17:50:06 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'hms_database', 3306, '', 0)
+#1 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\WebSystem-ITE_Group-8\app\Controllers\DoctorDashboardController.php(739): CodeIgniter\Database\BaseConnection->tableExists('lab_requests')
+#6 C:\WebSystem-ITE_Group-8\app\Controllers\DoctorDashboardController.php(25): App\Controllers\DoctorDashboardController->createLabRequestsTable()
+#7 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\DoctorDashboardController->labResults()
+#8 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorDashboardController))
+#9 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\WebSystem-ITE_Group-8\system\rewrite.php(44): require_once('C:\\WebSystem-IT...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\WebSystem-ITE_Group-8\app\Controllers\DoctorDashboardController.php(739): CodeIgniter\Database\BaseConnection->tableExists('lab_requests')
+#5 C:\WebSystem-ITE_Group-8\app\Controllers\DoctorDashboardController.php(25): App\Controllers\DoctorDashboardController->createLabRequestsTable()
+#6 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\DoctorDashboardController->labResults()
+#7 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorDashboardController))
+#8 C:\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\WebSystem-ITE_Group-8\system\rewrite.php(44): require_once('C:\\WebSystem-IT...')
+#13 {main}
+CRITICAL - 2025-08-31 17:50:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: doctor/lab-results]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `hms_database`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+ 4 APPPATH\Controllers\DoctorDashboardController.php(739): CodeIgniter\Database\BaseConnection->tableExists('lab_requests')
+ 5 APPPATH\Controllers\DoctorDashboardController.php(25): App\Controllers\DoctorDashboardController->createLabRequestsTable()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorDashboardController->labResults()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorDashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\WebSystem-ITE_Group-8\\public\\index.php')
+CRITICAL - 2025-08-31 18:21:06 --> Error: Call to undefined method App\Controllers\DoctorDashboardController::createDoctorNotesTable()
+[Method: GET, Route: doctor/patient-ehr]
+in APPPATH\Controllers\DoctorDashboardController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorDashboardController->patientEhr()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorDashboardController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\WebSystem-ITE_Group-8\\public\\index.php')
+CRITICAL - 2025-08-31 18:25:26 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor/my-schedule]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:25:27 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor/my-schedule]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:25:27 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor/my-schedule]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:26:13 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:26:16 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:27:21 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:27:23 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:30:03 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:30:04 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:30:05 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:30:05 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:31:52 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1292.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-31 18:34:45 --> ErrorException: Cannot redeclare App\Controllers\DoctorDashboardController::getPrescriptionWithDetails()
+[Method: GET, Route: doctor]
+in APPPATH\Controllers\DoctorDashboardController.php on line 1307.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

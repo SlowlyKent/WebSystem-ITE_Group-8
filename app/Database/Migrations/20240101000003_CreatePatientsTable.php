@@ -12,79 +12,71 @@ class CreatePatientsTable extends Migration
             'id' => [
                 'type' => 'INT',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
-            ],
-            'patient_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => 20,
             ],
             'first_name' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => '100',
+                'null' => false,
+            ],
+            'middle_name' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true,
             ],
             'last_name' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => '100',
+                'null' => false,
             ],
             'date_of_birth' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'gender' => [
-                'type' => 'ENUM',
-                'constraint' => ['male', 'female', 'other'],
+                'type' => 'VARCHAR',
+                'constraint' => '10',
+                'null' => true,
             ],
             'phone' => [
                 'type' => 'VARCHAR',
-                'constraint' => 20,
+                'constraint' => '20',
+                'null' => true,
             ],
             'email' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => '100',
                 'null' => true,
             ],
             'address' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'blood_type' => [
-                'type' => 'ENUM',
-                'constraint' => ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
-                'null' => true,
-            ],
-            'emergency_contact' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-                'null' => true,
-            ],
-            'emergency_phone' => [
-                'type' => 'VARCHAR',
-                'constraint' => 20,
-                'null' => true,
-            ],
             'status' => [
-                'type' => 'ENUM',
-                'constraint' => ['active', 'inactive', 'deceased'],
-                'default' => 'active',
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+                'null' => false,
+            ],
+            'room' => [
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'medical_notes' => [
+                'type' => 'TEXT',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'null' => false,
+                'null' => true,
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
-                'null' => false,
+                'null' => true,
             ],
         ]);
-
-        // Add primary key
         $this->forge->addKey('id', true);
-        
-        // Create table first
         $this->forge->createTable('patients');
-        
-        // Add unique constraint after table creation
-        $this->db->query('ALTER TABLE patients ADD UNIQUE KEY unique_patient_id (patient_id)');
     }
 
     public function down()
