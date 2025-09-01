@@ -73,7 +73,7 @@ class UserModel extends Model
                     ->where('status', 'active')
                     ->findAll();
     }
-
+    
     // Get all active users
     public function getActiveUsers()
     {

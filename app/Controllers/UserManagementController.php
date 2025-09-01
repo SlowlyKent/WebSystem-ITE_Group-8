@@ -3,15 +3,18 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\RoleModel;
 use CodeIgniter\Controller;
 
 class UserManagementController extends Controller
 {
     protected $userModel;
+    protected $roleModel;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->roleModel = new RoleModel();
     }
 
     public function index()
@@ -30,7 +33,8 @@ class UserManagementController extends Controller
         $data = [
             'title' => 'User Management',
             'users' => $this->userModel->getActiveUsers(),
-            'userRole' => $userRole
+            'userRole' => $userRole,
+            'roles' => $this->roleModel->getActiveRoles()
         ];
 
         return view('user_management/index', $data);
@@ -193,5 +197,40 @@ class UserManagementController extends Controller
         ];
 
         return $roleHierarchy[$currentUserRole] ?? [];
+    }
+
+    public function changePassword()
+    {
+        // Check if user is logged in
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+
+        $userId = session()->get('userId');
+        $currentPassword = $this->request->getPost('current_password');
+        $newPassword = $this->request->getPost('new_password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        // Validate current password
+        $user = $this->userModel->getUserByCredentials(session()->get('username'), $currentPassword);
+        if (!$user) {
+            session()->setFlashdata('error', 'Current password is incorrect.');
+            return redirect()->back()->withInput();
+        }
+
+        // Check if new password and confirm password match
+        if ($newPassword !== $confirmPassword) {
+            session()->setFlashdata('error', 'New password and confirm password do not match.');
+            return redirect()->back()->withInput();
+        }
+
+        // Update password in the database
+        $this->userModel->update($userId, [
+            'password' => password_hash($newPassword, PASSWORD_DEFAULT),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        session()->setFlashdata('success', 'Password changed successfully.');
+        return redirect()->to('/dashboard/profile');
     }
 }
