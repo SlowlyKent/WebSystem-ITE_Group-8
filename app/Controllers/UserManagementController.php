@@ -3,18 +3,27 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+<<<<<<< HEAD
 use App\Models\RoleModel;
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
 use CodeIgniter\Controller;
 
 class UserManagementController extends Controller
 {
     protected $userModel;
+<<<<<<< HEAD
     protected $roleModel;
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
 
     public function __construct()
     {
         $this->userModel = new UserModel();
+<<<<<<< HEAD
         $this->roleModel = new RoleModel();
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
     }
 
     public function index()
@@ -33,8 +42,12 @@ class UserManagementController extends Controller
         $data = [
             'title' => 'User Management',
             'users' => $this->userModel->getActiveUsers(),
+<<<<<<< HEAD
             'userRole' => $userRole,
             'roles' => $this->roleModel->getActiveRoles()
+=======
+            'userRole' => $userRole
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
         ];
 
         return view('user_management/index', $data);
@@ -198,6 +211,7 @@ class UserManagementController extends Controller
 
         return $roleHierarchy[$currentUserRole] ?? [];
     }
+<<<<<<< HEAD
 
     public function changePassword()
     {
@@ -233,4 +247,6 @@ class UserManagementController extends Controller
         session()->setFlashdata('success', 'Password changed successfully.');
         return redirect()->to('/dashboard/profile');
     }
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
 }

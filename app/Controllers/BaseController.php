@@ -35,7 +35,11 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
+<<<<<<< HEAD
     protected $helpers = [];
+=======
+    protected $helpers = ['url'];
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
 
     /**
      * Be sure to declare properties for any property fetch you initialized.

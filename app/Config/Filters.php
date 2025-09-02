@@ -35,7 +35,10 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'role'          => \App\Filters\RoleFilter::class,
+<<<<<<< HEAD
         'auth'          => \App\Filters\AuthFilter::class,
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
     ];
 
     /**
@@ -108,6 +111,7 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
+<<<<<<< HEAD
     public array $filters = [
         'auth' => [
             'before' => [
@@ -119,4 +123,7 @@ class Filters extends BaseFilters
             ]
         ]
     ];
+=======
+    public array $filters = [];
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
 }

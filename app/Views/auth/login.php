@@ -13,7 +13,11 @@
         }
 
         body {
+<<<<<<< HEAD
             background: #b9d3c9;
+=======
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -31,7 +35,11 @@
         }
 
         .login-header {
+<<<<<<< HEAD
             background: #052719;
+=======
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
             color: white;
             padding: 30px;
             text-align: center;
@@ -67,8 +75,13 @@
 
         .form-control:focus {
             outline: none;
+<<<<<<< HEAD
             border-color: #052719;
             box-shadow: 0 0 0 0.2rem rgba(5, 39, 25, 0.25);
+=======
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
         }
 
         .form-label {
@@ -79,7 +92,11 @@
         }
 
         .btn-login {
+<<<<<<< HEAD
             background: #052719;
+=======
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
             border: none;
             border-radius: 10px;
             padding: 12px;
@@ -93,8 +110,12 @@
 
         .btn-login:hover {
             transform: translateY(-2px);
+<<<<<<< HEAD
             box-shadow: 0 10px 20px rgba(5, 39, 25, 0.3);
             background: #0a3d26;
+=======
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
         }
 
         .forgot-password {
@@ -103,7 +124,11 @@
         }
 
         .forgot-password a {
+<<<<<<< HEAD
             color: #052719;
+=======
+            color: #667eea;
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
             text-decoration: none;
             font-weight: 500;
         }

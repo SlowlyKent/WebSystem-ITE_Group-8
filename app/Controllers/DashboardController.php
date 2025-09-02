@@ -126,6 +126,7 @@ class DashboardController extends Controller
             'email' => $this->request->getPost('email')
         ];
 
+<<<<<<< HEAD
         // Set custom validation rules for profile update (only validate fields being updated)
         $this->userModel->setValidationRules([
             'first_name' => 'required|min_length[2]|max_length[100]',
@@ -133,6 +134,8 @@ class DashboardController extends Controller
             'email' => 'required|valid_email|is_unique[users.email,id,' . $userId . ']'
         ]);
 
+=======
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
         if ($this->userModel->update($userId, $data)) {
             // Update session data
             session()->set('fullName', $data['first_name'] . ' ' . $data['last_name']);
@@ -140,6 +143,7 @@ class DashboardController extends Controller
             
             session()->setFlashdata('success', 'Profile updated successfully');
         } else {
+<<<<<<< HEAD
             // Get validation errors for debugging
             $errors = $this->userModel->errors();
             
@@ -189,6 +193,9 @@ class DashboardController extends Controller
             session()->setFlashdata('success', 'Password changed successfully');
         } else {
             session()->setFlashdata('error', 'Failed to change password');
+=======
+            session()->setFlashdata('error', 'Failed to update profile');
+>>>>>>> a353678cfce4d1f15b5eab45fa396d20e69e8d39
         }
 
         return redirect()->to('/dashboard/profile');
