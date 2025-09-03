@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient List - HMS</title>
+    <title>Patient Details - HMS</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -139,12 +139,14 @@
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .page-header h1 {
             color: white;
             font-size: 24px;
-            margin-bottom: 15px;
         }
 
         .add-patient-btn {
@@ -159,6 +161,53 @@
         }
 
         .add-patient-btn:hover {
+            background-color: #a8d5ba;
+        }
+
+        .back-btn {
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .btn-primary {
+            background-color: #b9d3c9;
+            color: #052719;
+        }
+
+        .btn-primary:hover {
             background-color: #a8d5ba;
         }
 
@@ -242,134 +291,184 @@
             margin-bottom: 15px;
             color: #ccc;
         }
+
+        /* Form Container */
+        .form-container {
+            background-color: #052719;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #b9d3c9;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        /* Patient Details */
+        .patient-details {
+            background-color: #052719;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .patient-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .patient-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #b9d3c9;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #052719;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .detail-section {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #b9d3c9;
+        }
+
+        .detail-section h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .detail-row {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #ccc;
+            min-width: 120px;
+            margin-right: 15px;
+        }
+
+        .detail-value {
+            color: white;
+            flex: 1;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-active {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h4>HMS</h4>
-            <div class="user-avatar">
-                <i class="fas fa-user"></i>
-            </div>
-            <p>Kent Eldrick Betonio</p>
-            <small>Hospital Administrator Dashboard</small>
-        </div>
-
-        <nav class="nav-menu">
-            <ul>
-                <li>
-                    <a href="<?= base_url('dashboard') ?>">
-                        <i class="fas fa-tachometer-alt"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= base_url('patients') ?>" class="active">
-                        <i class="fas fa-user-plus"></i>
-                        Patient Registration & EHR
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-credit-card"></i>
-                        Billing & Payment
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-chart-bar"></i>
-                        Reports & Analytics
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-flask"></i>
-                        Laboratory Management
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-pills"></i>
-                        Pharmacy & Inventory
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-database"></i>
-                        Database Status
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-users-cog"></i>
-                        User Management
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-calendar-alt"></i>
-                        Scheduling
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="logout-section">
-            <a href="<?= base_url('logout') ?>">
-                <i class="fas fa-sign-out-alt"></i>
-                Log-out
-            </a>
-        </div>
-    </div>
-
-    <!-- Main Content -->
+    <?= $this->include('dashboard/_sidebar') ?>
     <div class="main-content">
-        <div class="page-header">
-            <h1>Patient List</h1>
-            <a href="<?= base_url('patients/create') ?>" class="add-patient-btn">
-                <i class="fas fa-plus"></i> Add New Patient
-            </a>
-        </div>
-
-        <div class="patient-table-container">
-            <?php if (!empty($patients)): ?>
-                <table class="patient-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Status</th>
-                            <th>Room</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($patients as $patient): ?>
-                            <tr>
-                                <td><?= $patient['id'] ?></td>
-                                <td><?= $patient['first_name'] ?></td>
-                                <td><?= $patient['last_name'] ?></td>
-                                <td><?= $patient['status'] ?></td>
-                                <td><?= $patient['room'] ?? '—' ?></td>
-                                <td>
-                                    <a href="<?= base_url('patients/view/' . $patient['id']) ?>" class="action-btn view-btn">View</a>
-                                    <a href="<?= base_url('patients/edit/' . $patient['id']) ?>" class="action-btn edit-btn">Edit</a>
-                                    <a href="<?= base_url('patients/delete/' . $patient['id']) ?>" class="action-btn delete-btn" onclick="return confirm('Are you sure you want to delete this patient?')">Delete</a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else: ?>
-                <div class="empty-state">
-                    <i class="fas fa-user-friends"></i>
-                    <h3>No Patients Found</h3>
-                    <p>Start by adding your first patient to the system.</p>
-                </div>
-            <?php endif; ?>
-        </div>
+        <?= isset($content) ? $content : '' ?>
     </div>
 </body>
 </html>

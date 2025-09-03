@@ -1,0 +1,466 @@
+ERROR - 2025-09-03 07:04:05 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:04:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:04:07 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:04:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:04:07 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:04:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:09:52 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:09:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:09:58 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:09:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:12:59 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:12:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:21:55 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:21:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:22:27 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:22:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:34:24 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:34:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:34:27 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:34:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:34:30 --> Error fetching patients: Invalid file: "patient_list.php"
+CRITICAL - 2025-09-03 07:34:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "patient_list.php"
+[Method: GET, Route: patients]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('patient_list.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('patient_list', [], true)
+ 3 APPPATH\Controllers\PatientController.php(42): view('patient_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:38:17 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:38:17 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [], true)
+ 9 APPPATH\Controllers\PatientController.php(42): view('dashboard/patient_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:38:32 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:38:32 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [], true)
+ 9 APPPATH\Controllers\PatientController.php(42): view('dashboard/patient_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:38:35 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:38:35 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [], true)
+ 9 APPPATH\Controllers\PatientController.php(42): view('dashboard/patient_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:47:10 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:47:10 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [], true)
+ 9 APPPATH\Controllers\PatientController.php(42): view('dashboard/patient_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:47:14 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:47:14 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [], true)
+ 9 APPPATH\Controllers\PatientController.php(42): view('dashboard/patient_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:52:59 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:52:59 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:53:02 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:53:02 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:53:07 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:53:07 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:45 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:45 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:46 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:46 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:46 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:46 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:46 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:46 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:47 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:47 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:47 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:47 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:47 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:47 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:48 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:48 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-03 07:55:48 --> Error fetching patients: Undefined variable $content
+CRITICAL - 2025-09-03 07:55:48 --> ErrorException: Undefined variable $content
+[Method: GET, Route: patients]
+in APPPATH\Views\dashboard\_layout.php on line 471.
+ 1 APPPATH\Views\dashboard\_layout.php(471): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $content', 'C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php', 471)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\_layout.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('dashboard/_layout', [...], true)
+ 5 APPPATH\Views\dashboard\patient_list.php(12): CodeIgniter\View\View->include('dashboard/_layout', [...])
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\WebSystem-ITE_Group-8\\app\\Views\\dashboard\\patient_list.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dashboard/patient_list', [...], true)
+ 9 APPPATH\Controllers\PatientController.php(43): view('dashboard/patient_list', [...], [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatientController->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatientController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -21,8 +21,7 @@ $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 $routes->post('dashboard/change-password', 'DashboardController::changePassword');
 
-// Profile routes
-$routes->post('/profile/changePassword', 'UserManagementController::changePassword');
+// Removed UserManagementController routes as controller is deleted
 
 // Default route - redirect to login
 $routes->get('/', 'AuthController::index');

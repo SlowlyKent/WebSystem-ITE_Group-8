@@ -35,11 +35,13 @@ class PatientController extends Controller
             // Debug: Log the number of patients found
             log_message('debug', 'Found ' . count($data['patients']) . ' patients');
             
-            return view('patient_list', $data);
+            $content = view('dashboard/patient_list', $data, ['return' => true]);
+            return view('dashboard/_layout', ['content' => $content]);
         } catch (\Exception $e) {
             log_message('error', 'Error fetching patients: ' . $e->getMessage());
             $data['patients'] = [];
-            return view('patient_list', $data);
+            $content = view('dashboard/patient_list', $data, ['return' => true]);
+            return view('dashboard/_layout', ['content' => $content]);
         }
     }
 
@@ -53,13 +55,15 @@ class PatientController extends Controller
         }
 
         $data['patient'] = $patient;
-        return view('patient_view', $data);
+        $content = view('dashboard/patient_view', $data, ['return' => true]);
+        return view('dashboard/_layout', ['content' => $content]);
     }
 
     // Show add patient form
     public function create()
     {
-        return view('patient_form');
+        $content = view('dashboard/patient_form', [], ['return' => true]);
+        return view('dashboard/_layout', ['content' => $content]);
     }
 
     // Save new patient
@@ -152,7 +156,8 @@ class PatientController extends Controller
         $data['medical_info'] = $this->medicalInfoModel->where('patient_id', $id)->first();
         $data['insurance'] = $this->insuranceModel->where('patient_id', $id)->first();
 
-        return view('patient_form', $data);
+        $content = view('dashboard/patient_form', $data, ['return' => true]);
+        return view('dashboard/_layout', ['content' => $content]);
     }
 
     // Update patient
