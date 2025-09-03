@@ -252,7 +252,7 @@
             <div class="user-avatar">
                 <i class="fas fa-user"></i>
             </div>
-            <p>Kent Felicia</p>
+            <p>Kent Eldrick Betonio</p>
             <small>Hospital Administrator Dashboard</small>
         </div>
 
@@ -301,7 +301,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= base_url('user-management') ?>">
+                    <a href="#">
                         <i class="fas fa-users-cog"></i>
                         User Management
                     </a>

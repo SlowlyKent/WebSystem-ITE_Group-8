@@ -316,7 +316,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= base_url('user-management') ?>">
+                    <a href="#">
                         <i class="fas fa-users-cog"></i>
                         User Management
                     </a>

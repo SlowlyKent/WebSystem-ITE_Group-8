@@ -21,16 +21,6 @@ $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 $routes->post('dashboard/change-password', 'DashboardController::changePassword');
 
-// User Management routes (Admin and IT Staff only)
-$routes->group('user-management', ['filter' => 'auth'], function($routes) {
-    $routes->get('/', 'UserManagementController::index');
-    $routes->get('create', 'UserManagementController::create');
-    $routes->post('create', 'UserManagementController::create');
-    $routes->get('edit/(:num)', 'UserManagementController::edit/$1');
-    $routes->post('edit/(:num)', 'UserManagementController::edit/$1');
-    $routes->get('delete/(:num)', 'UserManagementController::delete/$1');
-});
-
 // Profile routes
 $routes->post('/profile/changePassword', 'UserManagementController::changePassword');
 
