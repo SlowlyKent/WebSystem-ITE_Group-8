@@ -115,7 +115,8 @@ class Filters extends BaseFilters
                 'patients*',
                 'user-management*',
                 'profile*',
-                'logout'
+                'logout',
+                'pharmacy*'
             ]
         ]
     ];

@@ -343,7 +343,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?= base_url('pharmacy') ?>">
                         <i class="fas fa-pills"></i>
                         Pharmacy & Inventory
                     </a>

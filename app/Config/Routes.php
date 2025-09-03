@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use CodeIgniter\Router\RouteCollection;
 
@@ -20,6 +20,28 @@ $routes->get('dashboard', 'DashboardController::index');
 $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 $routes->post('dashboard/change-password', 'DashboardController::changePassword');
+
+// Pharmacy & Inventory routes
+$routes->group('pharmacy', function($routes) {
+    $routes->get('/', 'PharmacyController::index');
+    $routes->get('inventory', 'PharmacyController::inventory');
+    $routes->get('dispense', 'PharmacyController::dispense');
+    $routes->get('receive', 'PharmacyController::receive');
+    $routes->get('alerts', 'PharmacyController::alerts');
+    $routes->get('reports', 'PharmacyController::reports');
+
+    // Patient Prescription Lookup
+    $routes->get('lookup', 'PrescriptionController::lookup');
+    $routes->get('lookup/view/(:num)', 'PrescriptionController::view/$1');
+    $routes->match(['get','post'], 'lookup/dispense/(:num)', 'PrescriptionController::dispense/$1');
+
+    // Medicines CRUD
+    $routes->get('medicines/create', 'PharmacyController::createMedicine');
+    $routes->post('medicines/store', 'PharmacyController::storeMedicine');
+    $routes->get('medicines/edit/(:num)', 'PharmacyController::editMedicine/$1');
+    $routes->post('medicines/update/(:num)', 'PharmacyController::updateMedicine/$1');
+    $routes->post('medicines/delete/(:num)', 'PharmacyController::deleteMedicine/$1');
+});
 
 // Removed UserManagementController routes as controller is deleted
 
