@@ -1,3 +1,6 @@
+<?= $this->extend('role_dashboard/admin/_layout') ?>
+
+<?= $this->section('content') ?>
 <div class="page-header">
     <h1>Patient Details</h1>
     <div class="action-buttons">
@@ -10,4 +13,5 @@
     </div>
 </div>
 
-<?= $this->include('dashboard/_patient_details') ?>
+<?= $this->include('role_dashboard/admin/PatientRegistration/_patient_details') ?>
+<?= $this->endSection() ?>

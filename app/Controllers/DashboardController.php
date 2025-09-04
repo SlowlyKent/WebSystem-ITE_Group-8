@@ -39,7 +39,7 @@ class DashboardController extends Controller
         // Get recent activities
         $data['recentActivities'] = $this->getRecentActivities();
 
-        return view('dashboard/index', $data);
+        return view('role_dashboard/admin/index', $data);
     }
 
     private function getDashboardStats()
@@ -109,7 +109,7 @@ class DashboardController extends Controller
             'user' => $user
         ];
 
-        return view('dashboard/profile', $data);
+        return view('role_dashboard/admin/dashboard/profile', $data);
     }
 
     public function updateProfile()

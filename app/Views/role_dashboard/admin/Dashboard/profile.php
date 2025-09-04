@@ -419,7 +419,7 @@
                 <p><?= isset($user['role']) ? ucfirst($user['role']) : 'Administrator' ?></p>
             </div>
 
-            <form action="<?= base_url('dashboard/profile') ?>" method="post">
+            <form action="<?= base_url('admin/profile') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="form-grid">
                     <div class="form-group">
@@ -469,7 +469,7 @@
                     <i class="fas fa-key"></i> Change Password
                 </h3>
                 
-                <form action="<?= base_url('dashboard/change-password') ?>" method="post">
+                <form action="<?= base_url('admin/change-password') ?>" method="post">
                     <?= csrf_field() ?>
                     <div class="form-grid">
                         <div class="form-group full-width">

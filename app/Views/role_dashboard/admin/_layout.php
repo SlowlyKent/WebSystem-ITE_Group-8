@@ -466,9 +466,9 @@
     </style>
 </head>
 <body>
-    <?= $this->include('dashboard/_sidebar') ?>
+    <?= $this->include('role_dashboard/admin/dashboard/_sidebar') ?>
     <div class="main-content">
-        <?= isset($content) ? $content : '' ?>
+        <?= $this->renderSection('content') ?>
     </div>
 </body>
 </html>

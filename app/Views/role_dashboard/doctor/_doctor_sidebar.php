@@ -2,66 +2,60 @@
     <div class="sidebar-header">
         <h4>HMS</h4>
         <div class="user-avatar">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user-md"></i>
         </div>
-        <p><?= session()->get('fullName') ?: 'User' ?></p>
-        <small>Hospital Administrator Dashboard</small>
+        <p><?= session()->get('fullName') ?: 'Doctor' ?></p>
+        <small>Doctor Dashboard</small>
     </div>
 
     <nav class="nav-menu">
         <ul>
             <li>
-                <a href="<?= base_url('dashboard') ?>" <?= uri_string() === 'dashboard' ? 'class="active"' : '' ?>>
+                <a href="<?= base_url('doctor/dashboard') ?>" <?= uri_string() === 'doctor/dashboard' ? 'class="active"' : '' ?>>
                     <i class="fas fa-tachometer-alt"></i>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('patients') ?>" <?= uri_string() === 'patients' ? 'class="active"' : '' ?>>
-                    <i class="fas fa-user-plus"></i>
-                    Patient Registration & EHR
+                <a href="<?= base_url('doctor/patients') ?>" <?= uri_string() === 'doctor/patients' ? 'class="active"' : '' ?>>
+                    <i class="fas fa-user-injured"></i>
+                    Patient Records
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-credit-card"></i>
-                    Billing & Payment
+                    <i class="fas fa-calendar-check"></i>
+                    Appointments
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-chart-bar"></i>
-                    Reports & Analytics
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                    Prescriptions
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-flask"></i>
-                    Laboratory Management
+                    Lab Results
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-pills"></i>
-                    Pharmacy & Inventory
+                    <i class="fas fa-notes-medical"></i>
+                    Medical Notes
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-database"></i>
-                    Database Status
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-users-cog"></i>
-                    User Management
+                    <i class="fas fa-chart-line"></i>
+                    Patient Analytics
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-calendar-alt"></i>
-                    Scheduling
+                    Schedule
                 </a>
             </li>
         </ul>

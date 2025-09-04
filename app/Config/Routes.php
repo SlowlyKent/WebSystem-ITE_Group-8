@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use CodeIgniter\Router\RouteCollection;
 
@@ -21,7 +21,19 @@ $routes->get('dashboard/profile', 'DashboardController::profile');
 $routes->post('dashboard/profile', 'DashboardController::updateProfile');
 $routes->post('dashboard/change-password', 'DashboardController::changePassword');
 
-// Removed UserManagementController routes as controller is deleted
+// User Management routes
+$routes->get('user-management', 'UserManagementController::index');
+$routes->get('user-management/add', 'UserManagementController::add');
+$routes->post('user-management/add', 'UserManagementController::create');
+$routes->post('user-management/create', 'UserManagementController::create'); // Added to fix 404 on create
+
+// Role-based dashboards
+$routes->get('doctor/dashboard', 'DoctorDashboardController::index');
+$routes->get('doctor/patients', 'DoctorDashboardController::patients');
+$routes->get('doctor/patient/(:num)', 'DoctorDashboardController::viewPatient/$1');
+$routes->get('doctor/profile', 'DoctorDashboardController::profile');
+$routes->post('doctor/profile', 'DoctorDashboardController::updateProfile');
+$routes->get('doctor/settings', 'DoctorDashboardController::settings');
 
 // Default route - redirect to login
 $routes->get('/', 'AuthController::index');
@@ -37,5 +49,3 @@ $routes->get('/patients/delete/(:num)', 'PatientController::delete/$1');
 
 // Temporary route for checking tables
 $routes->get('/check-tables', 'CheckTables::index');
-
-
