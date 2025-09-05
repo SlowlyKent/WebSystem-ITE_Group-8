@@ -30,7 +30,10 @@ $routes->post('user-management/create', 'UserManagementController::create'); // 
 // Role-based dashboards
 $routes->get('doctor/dashboard', 'DoctorDashboardController::index');
 $routes->get('doctor/patients', 'DoctorDashboardController::patients');
+$routes->get('doctor/my-schedule', 'DoctorDashboardController::mySchedule');
 $routes->get('doctor/patient/(:num)', 'DoctorDashboardController::viewPatient/$1');
+$routes->get('doctor/lab-results', 'DoctorDashboardController::labRequests');
+$routes->get('doctor/prescriptions', 'DoctorDashboardController::prescriptions');
 $routes->get('doctor/profile', 'DoctorDashboardController::profile');
 $routes->post('doctor/profile', 'DoctorDashboardController::updateProfile');
 $routes->get('doctor/settings', 'DoctorDashboardController::settings');

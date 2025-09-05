@@ -16,6 +16,16 @@
             font-family: Arial, sans-serif;
             background-color: #b9d3c9;
             overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .dashboard {
+            display: flex;
+            width: 100%;
+            min-height: 100vh; 
+            background: #b9d3c9;
+            padding: 0;
         }
 
         /* Sidebar */
@@ -31,128 +41,42 @@
             left: 0;
             top: 0;
             z-index: 1000;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .sidebar-header h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .user-avatar {
-            width: 50px;
-            height: 50px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #666;
-        }
-
-        .sidebar-header p {
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
-
-        .sidebar-header small {
-            font-size: 10px;
-            opacity: 0.8;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-bottom: 3px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .nav-menu a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a.active {
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        .nav-menu i {
-            margin-right: 8px;
-            width: 14px;
-            font-size: 12px;
-        }
-
-        .logout-section {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-        }
-
-        .logout-section a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
-            border: 1px solid white;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .logout-section a:hover {
-            background-color: rgba(255,255,255,0.1);
+            overflow-y: auto;
         }
 
         /* Main Content */
-        .main-content {
-            margin-left: 300px;
-            padding: 20px;
+        .main {
+            flex: 1;
+            padding: 40px 40px 40px 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             min-height: 100vh;
+            width: 100%;
         }
 
         .main-header {
-            background-color: #052719;
+            background-color: #81c798;
             padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         }
 
         .header-left h1 {
-            color: white;
-            font-size: 28px;
+            color: #052719;
+            font-size: 24px;
             margin-bottom: 5px;
         }
 
         .header-left p {
-            color: #b9d3c9;
-            font-size: 16px;
+            color: #052719;
+            font-size: 14px;
         }
 
+        /* Profile Dropdown */
         .profile-dropdown {
             position: relative;
         }
@@ -162,9 +86,9 @@
             align-items: center;
             gap: 10px;
             background-color: rgba(255,255,255,0.1);
-            color: white;
+            color: #052719;
             border: none;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
@@ -196,7 +120,6 @@
             min-width: 200px;
             z-index: 1000;
             display: none;
-            overflow: hidden;
             margin-top: 5px;
             border: 1px solid rgba(255,255,255,0.1);
         }
@@ -227,36 +150,40 @@
         }
 
         /* Stats Section */
-        .stats-section {
+        .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
         }
 
-        .stat-card {
-            background-color: #052719;
-            padding: 15px;
-            border-radius: 8px;
+        .card {
+            background: #052719;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #fafafa;
         }
 
-        .stat-icon {
-            font-size: 20px;
-            color: white;
-            margin-bottom: 8px;
+        .card i {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #00ff95;
         }
 
-        .stat-info h3 {
-            font-size: 20px;
-            color: white;
-            margin-bottom: 3px;
+        .card span {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #00ff95;
         }
 
-        .stat-info p {
-            color: #b9d3c9;
-            font-size: 12px;
+        .card:hover {
+            background: #0f6b45;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
         }
 
         /* Content Grid */
@@ -267,128 +194,223 @@
         }
 
         .appointments-section, .patient-notes-section {
-            background-color: #052719;
+            background: #fff;
             padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         .appointments-section h2, .patient-notes-section h2 {
-            color: white;
+            color: #052719;
             margin-bottom: 12px;
             font-size: 16px;
         }
 
         .appointments-placeholder, .notes-placeholder {
             text-align: center;
-            padding: 30px;
-            color: #b9d3c9;
+            padding: 20px;
+            color: #879b93;
             background-color: rgba(255,255,255,0.1);
             border-radius: 6px;
         }
 
         .appointments-placeholder i {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 8px;
             color: #b9d3c9;
         }
 
-        .notes-placeholder {
-            padding: 20px;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main {
+                padding: 20px 20px 20px 320px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .dashboard {
+                padding: 15px;
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0 0 20px 0;
+                border-radius: 10px;
+            }
+
+            .main {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 10px;
+            }
+
+            .main {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            .main-header {
+                padding: 15px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card i {
+                font-size: 24px;
+            }
+
+            .card span {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard {
+                padding: 5px;
+            }
+
+            .main {
+                padding: 5px;
+            }
+
+            .main-header {
+                padding: 12px;
+            }
+
+            .header-left h1 {
+                font-size: 18px;
+            }
+
+            .header-left p {
+                font-size: 12px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            .card i {
+                font-size: 20px;
+            }
+
+            .card span {
+                font-size: 16px;
+            }
+
+            .profile-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .profile-avatar {
+                width: 24px;
+                height: 24px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <?= $this->include('role_dashboard/doctor/_doctor_sidebar') ?>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <?= $this->include('role_dashboard/doctor/_doctor_sidebar') ?>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <h1>Doctor Dashboard</h1>
-                <p>Welcome, Dr. <?= $user['name'] ?></p>
-            </div>
-            <div class="header-right">
-                <div class="profile-dropdown">
-                    <button class="profile-btn" onclick="toggleProfileDropdown()">
-                        <div class="profile-avatar">
-                            <i class="fas fa-user-md"></i>
+        <!-- Main Content -->
+        <main class="main">
+            <header class="main-header">
+                <div class="header-left">
+                    <h1>Doctor Dashboard</h1>
+                    <p>Welcome, Dr. <?= esc($user['name']) ?></p>
+                </div>
+                <div class="header-right">
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" onclick="toggleProfileDropdown()">
+                            <div class="profile-avatar"><i class="fas fa-user-md"></i></div>
+                            <span>Dr. <?= esc($user['name']) ?></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="profileDropdown">
+                            <a href="<?= base_url('doctor/profile') ?>" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i> Edit Profile
+                            </a>
+                            <a href="<?= base_url('doctor/settings') ?>" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="<?= base_url('logout') ?>" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </div>
-                        <span>Dr. <?= $user['name'] ?></span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu" id="profileDropdown">
-                        <a href="<?= base_url('doctor/profile') ?>" class="dropdown-item">
-                            <i class="fas fa-user-edit"></i>
-                            Edit Profile
-                        </a>
-                        <a href="<?= base_url('doctor/settings') ?>" class="dropdown-item">
-                            <i class="fas fa-cog"></i>
-                            Settings
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('logout') ?>" class="dropdown-item">
-                            <i class="fas fa-sign-out-alt"></i>
-                            Logout
-                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <section class="stats">
+                <div class="card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>8</span>
+                    <p>Today's Appointments</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-vials"></i>
+                    <span>5</span>
+                    <p>Pending Lab Results</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-pills"></i>
+                    <span>12</span>
+                    <p>Prescribed Medicines</p>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <div class="appointments-section">
+                    <h2><i class="fas fa-calendar-check"></i> Today's Appointments</h2>
+                    <div class="appointments-placeholder">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Appointment schedule will be displayed here</p>
+                    </div>
+                </div>
+                <div class="patient-notes-section">
+                    <h2><i class="fas fa-notes-medical"></i> Recent Notes</h2>
+                    <div class="notes-placeholder">
+                        <p>Recent patient notes and updates</p>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <!-- Statistics Cards -->
-        <div class="stats-section">
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>8</h3>
-                    <p>Today's Appointments</p>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-user-injured"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>24</h3>
-                    <p>Active Patients</p>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-flask"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>5</h3>
-                    <p>Pending Lab Results</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Content Grid -->
-        <div class="content-grid">
-            <!-- Appointments Section -->
-            <div class="appointments-section">
-                <h2><i class="fas fa-calendar-check"></i> Today's Appointments</h2>
-                <div class="appointments-placeholder">
-                    <i class="fas fa-calendar-alt"></i>
-                    <p>Appointment schedule will be displayed here</p>
-                </div>
-            </div>
-
-            <!-- Patient Notes Section -->
-            <div class="patient-notes-section">
-                <h2><i class="fas fa-notes-medical"></i> Recent Notes</h2>
-                <div class="notes-placeholder">
-                    <p>Recent patient notes and updates</p>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
 
     <script>
@@ -396,12 +418,10 @@
             const dropdown = document.getElementById('profileDropdown');
             dropdown.classList.toggle('show');
         }
-
-        // Close dropdown when clicking outside
+        
         document.addEventListener('click', function(event) {
             const dropdown = document.getElementById('profileDropdown');
             const profileBtn = document.querySelector('.profile-btn');
-            
             if (!profileBtn.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
