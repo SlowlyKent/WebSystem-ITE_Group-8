@@ -16,6 +16,16 @@
             font-family: Arial, sans-serif;
             background-color: #b9d3c9;
             overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .dashboard {
+            display: flex;
+            width: 100%;
+            min-height: 100vh; 
+            background: #b9d3c9;
+            padding: 0;
         }
 
         /* Sidebar */
@@ -31,119 +41,37 @@
             left: 0;
             top: 0;
             z-index: 1000;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .sidebar-header h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .user-avatar {
-            width: 50px;
-            height: 50px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #666;
-        }
-
-        .sidebar-header p {
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
-
-        .sidebar-header small {
-            font-size: 10px;
-            opacity: 0.8;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-bottom: 3px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .nav-menu a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a.active {
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        .nav-menu i {
-            margin-right: 8px;
-            width: 14px;
-            font-size: 12px;
-        }
-
-        .logout-section {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-        }
-
-        .logout-section a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
-            border: 1px solid white;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .logout-section a:hover {
-            background-color: rgba(255,255,255,0.1);
+            overflow-y: auto;
         }
 
         /* Main Content */
-        .main-content {
-            margin-left: 300px;
-            padding: 20px;
+        .main {
+            flex: 1;
+            padding: 40px 40px 40px 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             min-height: 100vh;
+            width: 100%;
         }
 
         .page-header {
-            background-color: #052719;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            background: #81c798;
+            height: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 10px rgba(0,0,0,.2);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
+            color: #052719;
+            font-weight: bold;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .page-header h1 {
-            font-size: 24px;
+            font-size: 18px;
+            margin: 0;
         }
 
         .btn {
@@ -157,15 +85,6 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a6268;
         }
 
         .btn-primary {
@@ -198,10 +117,14 @@
         .patient-table {
             width: 100%;
             border-collapse: collapse;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,.1);
         }
 
         .patient-table thead {
-            background-color: #052719;
+            background: #559680;
             color: white;
         }
 
@@ -213,7 +136,7 @@
         }
 
         .patient-table th {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 14px;
         }
 
@@ -264,11 +187,22 @@
             margin-bottom: 20px;
         }
 
-        .search-input {
-            width: 300px;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px 12px;
+            border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,.1);
+            gap: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
             font-size: 14px;
         }
 
@@ -290,24 +224,51 @@
             font-size: 12px;
             font-weight: bold;
         }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main {
+                padding: 20px 20px 20px 320px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .dashboard {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0 0 20px 0;
+                border-radius: 10px;
+            }
+
+            .main {
+                width: 100%;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <?= $this->include('role_dashboard/doctor/_doctor_sidebar') ?>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <?= $this->include('role_dashboard/doctor/_doctor_sidebar') ?>
 
-    <!-- Main Content -->
-    <div class="main-content">
+        <!-- Main Content -->
+        <main class="main">
         <div class="page-header">
-            <h1><i class="fas fa-user-injured"></i> Patient Records</h1>
-            <a href="<?= base_url('doctor/dashboard') ?>" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Return to Dashboard
-            </a>
+            <h1><i class="fas fa-user"></i> Patient Records</h1>
         </div>
 
         <!-- Search Container -->
         <div class="search-container">
-            <input type="text" id="patientSearch" class="search-input" placeholder="Search patients by name, email, or phone...">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="patientSearch" placeholder="Search patients by name, email, or phone...">
+            </div>
         </div>
 
         <!-- Patient Table -->
@@ -381,6 +342,7 @@
                 </div>
             <?php endif; ?>
         </div>
+        </main>
     </div>
 
     <script>

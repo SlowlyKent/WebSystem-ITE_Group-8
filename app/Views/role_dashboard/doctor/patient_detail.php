@@ -16,6 +16,16 @@
             font-family: Arial, sans-serif;
             background-color: #b9d3c9;
             overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .dashboard {
+            display: flex;
+            width: 100%;
+            min-height: 100vh; 
+            background: #b9d3c9;
+            padding: 0;
         }
 
         /* Sidebar */
@@ -31,97 +41,7 @@
             left: 0;
             top: 0;
             z-index: 1000;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .sidebar-header h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .user-avatar {
-            width: 50px;
-            height: 50px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #666;
-        }
-
-        .sidebar-header p {
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
-
-        .sidebar-header small {
-            font-size: 10px;
-            opacity: 0.8;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-bottom: 3px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .nav-menu a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a.active {
-            background-color: rgba(255,255,255,0.2);
-        }
-
-        .nav-menu i {
-            margin-right: 8px;
-            width: 14px;
-            font-size: 12px;
-        }
-
-        .logout-section {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-        }
-
-        .logout-section a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
-            border: 1px solid white;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .logout-section a:hover {
-            background-color: rgba(255,255,255,0.1);
+            overflow-y: auto;
         }
 
         /* Main Content */
@@ -129,6 +49,7 @@
             margin-left: 300px;
             padding: 20px;
             min-height: 100vh;
+            width: calc(100% - 340px);
         }
 
         .page-header {

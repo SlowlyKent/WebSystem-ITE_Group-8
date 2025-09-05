@@ -60,6 +60,20 @@ class DoctorDashboardController extends Controller
         return view('role_dashboard/doctor/patient_records', $data);
     }
 
+    public function mySchedule()
+    {
+        $data = [
+            'title' => 'My Schedule',
+            'user' => [
+                'name' => session()->get('fullName'),
+                'role' => session()->get('role'),
+                'username' => session()->get('username')
+            ]
+        ];
+
+        return view('role_dashboard/doctor/myshedule', $data);
+    }
+
     public function viewPatient($id)
     {
         $patientModel = new \App\Models\PatientModel();
@@ -152,5 +166,33 @@ class DoctorDashboardController extends Controller
         ];
 
         return view('role_dashboard/doctor/settings', $data);
+    }
+
+    public function labRequests()
+    {
+        $data = [
+            'title' => 'Lab Requests & Results',
+            'user' => [
+                'name' => session()->get('fullName'),
+                'role' => session()->get('role'),
+                'username' => session()->get('username')
+            ]
+        ];
+
+        return view('role_dashboard/doctor/labreq', $data);
+    }
+
+    public function prescriptions()
+    {
+        $data = [
+            'title' => 'Prescriptions',
+            'user' => [
+                'name' => session()->get('fullName'),
+                'role' => session()->get('role'),
+                'username' => session()->get('username')
+            ]
+        ];
+
+        return view('role_dashboard/doctor/prescription', $data);
     }
 }
