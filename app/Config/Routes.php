@@ -27,7 +27,7 @@ $routes->get('user-management/add', 'UserManagementController::add');
 $routes->post('user-management/add', 'UserManagementController::create');
 $routes->post('user-management/create', 'UserManagementController::create'); // Added to fix 404 on create
 
-// Role-based dashboards
+// Role-based dashboards - Doctor
 $routes->get('doctor/dashboard', 'DoctorDashboardController::index');
 $routes->get('doctor/patients', 'DoctorDashboardController::patients');
 $routes->get('doctor/my-schedule', 'DoctorDashboardController::mySchedule');
@@ -37,6 +37,16 @@ $routes->get('doctor/prescriptions', 'DoctorDashboardController::prescriptions')
 $routes->get('doctor/profile', 'DoctorDashboardController::profile');
 $routes->post('doctor/profile', 'DoctorDashboardController::updateProfile');
 $routes->get('doctor/settings', 'DoctorDashboardController::settings');
+
+// Role-based dashboards - Nurse
+$routes->get('nurse/dashboard', 'NurseDashboardController::index');
+$routes->get('nurse/patient-assignments', 'NurseDashboardController::patientAssignments');
+$routes->get('nurse/vital-signs', 'NurseDashboardController::vitalSigns');
+$routes->get('nurse/medication-admin', 'NurseDashboardController::medicationAdmin');
+$routes->get('nurse/nursing-notes', 'NurseDashboardController::nursingNotes');
+$routes->get('nurse/shift-handover', 'NurseDashboardController::shiftHandover');
+$routes->get('nurse/profile', 'NurseDashboardController::profile');
+$routes->post('nurse/profile/update', 'NurseDashboardController::updateProfile');
 
 // Default route - redirect to login
 $routes->get('/', 'AuthController::index');

@@ -56,6 +56,8 @@ class AuthController extends Controller
             switch ($user['role']) {
                 case 'doctor':
                     return redirect()->to('/doctor/dashboard');
+                case 'nurse':
+                    return redirect()->to('/nurse/dashboard');
                 case 'admin':
                 case 'it_staff':
                 default:
