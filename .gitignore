@@ -1,2 +1,7 @@
 writable/session/*
-writable/session/*
+# Ignore all log files
+*.log
+
+# Ignore log folders
+logs/
+storage/logs/
