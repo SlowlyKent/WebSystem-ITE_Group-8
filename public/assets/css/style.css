@@ -646,7 +646,148 @@ body {
 }
 
 /* ========================================
-   7. USER MANAGEMENT PAGES
+   7. DATABASE STATUS PAGE
+   Used by: database_status.php
+   ======================================== */
+
+.db-status-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.db-status-card {
+    background-color: #052719;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.status-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.status-header h3 {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-header i {
+    color: #b9d3c9;
+}
+
+.connection-info {
+    text-align: center;
+}
+
+.status-indicator {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.status-indicator.connected {
+    color: #4CAF50;
+}
+
+.status-indicator.disconnected {
+    color: #f44336;
+}
+
+.connection-details p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #b9d3c9;
+}
+
+.tables-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.table-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(185, 211, 201, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #b9d3c9;
+}
+
+.table-name {
+    font-weight: bold;
+    color: white;
+}
+
+.table-count {
+    color: #b9d3c9;
+    font-size: 14px;
+}
+
+.storage-info, .activity-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.storage-item, .activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(185, 211, 201, 0.1);
+    border-radius: 8px;
+}
+
+.storage-label, .activity-label {
+    font-weight: bold;
+    color: white;
+}
+
+.storage-value, .activity-value {
+    color: #b9d3c9;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.refresh-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.refresh-btn {
+    background-color: #b9d3c9;
+    color: #052719;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-btn:hover {
+    background-color: #a8c4ba;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ========================================
+   8. USER MANAGEMENT PAGES
    Used by: add_user.php, user management forms
    ======================================== */
 
