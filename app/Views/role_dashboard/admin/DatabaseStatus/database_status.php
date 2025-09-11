@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <!-- Database Connection Status -->
+    <!-- Top Status Cards -->
     <div class="db-status-container">
         <div class="db-status-card connection-status">
             <div class="status-header">
@@ -24,29 +24,6 @@
                         <p><strong>Server:</strong> <?= esc($connection['server']) ?></p>
                         <p><strong>Database:</strong> <?= esc($connection['database']) ?></p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tables Overview -->
-        <div class="db-status-card tables-overview">
-            <div class="status-header">
-                <h3><i class="fas fa-table"></i> Tables Overview</h3>
-            </div>
-            <div class="status-content">
-                <div class="tables-grid">
-                    <?php foreach ($tables as $tableName => $recordCount): ?>
-                        <div class="table-item">
-                            <span class="table-name"><?= esc($tableName) ?></span>
-                            <span class="table-count">
-                                <?php if ($tableName === 'appointments'): ?>
-                                    45 records
-                                <?php else: ?>
-                                    <?= esc($recordCount) ?> records
-                                <?php endif; ?>
-                            </span>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -88,6 +65,52 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Tables Overview -->
+    <?php foreach ($tables as $tableName => $tableData): ?>
+        <div class="db-status-card individual-table">
+            <div class="status-header">
+                <h3><i class="fas fa-table"></i> <?= esc(ucwords(str_replace('_', ' ', $tableName))) ?> Table</h3>
+                <span class="record-count">
+                    <?= is_array($tableData) ? esc($tableData['count']) : esc($tableData) ?> records
+                </span>
+            </div>
+            <div class="status-content">
+                <?php if (is_array($tableData) && !empty($tableData['records'])): ?>
+                    <div class="table-data">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <?php foreach ($tableData['columns'] as $column): ?>
+                                        <th><?= esc(ucwords(str_replace('_', ' ', $column))) ?></th>
+                                    <?php endforeach; ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($tableData['records'] as $record): ?>
+                                    <tr>
+                                        <?php foreach ($tableData['columns'] as $column): ?>
+                                            <td><?= esc($record[$column] ?? 'N/A') ?></td>
+                                        <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                        <?php if ($tableData['count'] > 10): ?>
+                            <div class="table-footer">
+                                <small>Showing first 10 records of <?= esc($tableData['count']) ?> total</small>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php elseif (is_array($tableData) && empty($tableData['records'])): ?>
+                    <div class="no-data">
+                        <p>No records found or table is empty</p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
     </div>
 
     <!-- Refresh Button -->

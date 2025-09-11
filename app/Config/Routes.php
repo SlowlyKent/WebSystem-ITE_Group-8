@@ -60,8 +60,8 @@ $routes->get('/patients/edit/(:num)', 'PatientController::edit/$1');
 $routes->post('/patients/update/(:num)', 'PatientController::update/$1');
 $routes->get('/patients/delete/(:num)', 'PatientController::delete/$1');
 
-// Database Status route
-$routes->get('database-status', 'DatabaseController::status');
+// Database Status route (with authentication filter)
+$routes->get('database-status', 'DatabaseController::status', ['filter' => 'auth']);
 
 // Temporary route for checking tables
 $routes->get('/check-tables', 'CheckTables::index');
