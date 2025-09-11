@@ -49,9 +49,9 @@
                             <small>Group or class (Antibiotic, Analgesic, etc.).</small>
                         </div>
                         <div class="field" style="grid-column: span 6;">
-                            <label>Unit</label>
-                            <input type="text" name="unit" placeholder="tablet, capsule, bottle..." value="<?= esc(set_value('unit', $medicine['unit'] ?? '')) ?>">
-                            <small>Packaging unit (tablet, capsule, bottle, vial, etc.).</small>
+                            <label>Dosage Form</label>
+                            <input type="text" name="unit" placeholder="tablet, capsule, syrup, injection..." value="<?= esc(set_value('unit', $medicine['unit'] ?? '')) ?>">
+                            <small>Pharmaceutical dosage form (tablet, capsule, syrup, vial, etc.).</small>
                         </div>
                     </div>
                 </div>

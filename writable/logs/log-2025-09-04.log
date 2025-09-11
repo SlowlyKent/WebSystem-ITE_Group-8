@@ -1,0 +1,28 @@
+ERROR - 2025-09-04 19:10:26 --> mysqli_sql_exception: Unknown column 'prescriptions.date' in 'order clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `prescri...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `prescri...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `prescri...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `prescri...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PrescriptionController.php(112): CodeIgniter\Database\BaseBuilder->get(100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PrescriptionController->lookup()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrescriptionController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-09-04 19:21:06 --> mysqli_sql_exception: Unknown column 'prescriptions.date' in 'order clause' in C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `prescri...', 0)
+#1 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `prescri...')
+#2 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `prescri...')
+#3 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `prescri...', Array, false)
+#4 C:\xampp\htdocs\WebSystem-ITE_Group-8\app\Controllers\PrescriptionController.php(112): CodeIgniter\Database\BaseBuilder->get(100)
+#5 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(933): App\Controllers\PrescriptionController->lookup()
+#6 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrescriptionController))
+#7 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\WebSystem-ITE_Group-8\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\WebSystem-ITE_Group-8\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
