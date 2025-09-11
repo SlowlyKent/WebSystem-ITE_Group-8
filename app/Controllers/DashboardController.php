@@ -39,7 +39,7 @@ class DashboardController extends Controller
         // Get recent activities
         $data['recentActivities'] = $this->getRecentActivities();
 
-        return view('dashboard/index', $data);
+        return view('role_dashboard/admin/index', $data);
     }
 
     private function getDashboardStats()
@@ -109,7 +109,7 @@ class DashboardController extends Controller
             'user' => $user
         ];
 
-        return view('dashboard/profile', $data);
+        return view('role_dashboard/admin/dashboard/profile', $data);
     }
 
     public function updateProfile()
@@ -126,6 +126,13 @@ class DashboardController extends Controller
             'email' => $this->request->getPost('email')
         ];
 
+        // Set custom validation rules for profile update (only validate fields being updated)
+        $this->userModel->setValidationRules([
+            'first_name' => 'required|min_length[2]|max_length[100]',
+            'last_name' => 'required|min_length[2]|max_length[100]',
+            'email' => 'required|valid_email|is_unique[users.email,id,' . $userId . ']'
+        ]);
+
         if ($this->userModel->update($userId, $data)) {
             // Update session data
             session()->set('fullName', $data['first_name'] . ' ' . $data['last_name']);
@@ -133,7 +140,55 @@ class DashboardController extends Controller
             
             session()->setFlashdata('success', 'Profile updated successfully');
         } else {
-            session()->setFlashdata('error', 'Failed to update profile');
+            // Get validation errors for debugging
+            $errors = $this->userModel->errors();
+            
+            if (!empty($errors)) {
+                $errorMessage = 'Validation errors: ' . implode(', ', $errors);
+                session()->setFlashdata('error', $errorMessage);
+            } else {
+                session()->setFlashdata('error', 'Failed to update profile');
+            }
+        }
+
+        return redirect()->to('/dashboard/profile');
+    }
+
+    public function changePassword()
+    {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+
+        $userId = session()->get('userId');
+        $currentPassword = $this->request->getPost('current_password');
+        $newPassword = $this->request->getPost('new_password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        // Validate passwords match
+        if ($newPassword !== $confirmPassword) {
+            session()->setFlashdata('error', 'New passwords do not match');
+            return redirect()->to('/dashboard/profile');
+        }
+
+        // Get current user data
+        $user = $this->userModel->find($userId);
+        
+        // Verify current password
+        if (!password_verify($currentPassword, $user['password'])) {
+            session()->setFlashdata('error', 'Current password is incorrect');
+            return redirect()->to('/dashboard/profile');
+        }
+
+        // Update password
+        $data = [
+            'password' => password_hash($newPassword, PASSWORD_DEFAULT)
+        ];
+
+        if ($this->userModel->update($userId, $data)) {
+            session()->setFlashdata('success', 'Password changed successfully');
+        } else {
+            session()->setFlashdata('error', 'Failed to change password');
         }
 
         return redirect()->to('/dashboard/profile');

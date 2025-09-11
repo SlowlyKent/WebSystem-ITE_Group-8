@@ -26,11 +26,11 @@ class AdminSeeder extends Seeder
         
         if (!$existingAdmin) {
             $this->db->table('users')->insert($data);
-            echo "✅ Admin user created successfully!\n";
+            echo " Admin user created successfully!\n";
             echo "Username: admin\n";
             echo "Password: admin123\n";
         } else {
-            echo "ℹ️ Admin user already exists!\n";
+            echo " Admin user already exists!\n";
         }
     }
 }

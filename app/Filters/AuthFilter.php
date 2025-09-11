@@ -13,14 +13,14 @@ class AuthFilter implements FilterInterface
         // Check if user is logged in
         if (!session()->get('isLoggedIn')) {
             session()->setFlashdata('error', 'Please login to access this page');
-            return redirect()->to('/login');
+            return redirect()->to(base_url('login'));
         }
 
         // Check if user account is active
         if (session()->get('status') === 'inactive') {
             session()->destroy();
             session()->setFlashdata('error', 'Your account has been deactivated. Please contact administrator.');
-            return redirect()->to('/login');
+            return redirect()->to(base_url('login'));
         }
     }
 

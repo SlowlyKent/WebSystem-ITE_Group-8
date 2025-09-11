@@ -13,9 +13,8 @@ class PatientModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'patient_id', 'first_name', 'last_name', 'date_of_birth', 'gender',
-        'phone', 'email', 'address', 'blood_type', 'emergency_contact',
-        'emergency_phone', 'status'
+        'first_name', 'middle_name', 'last_name', 'date_of_birth', 'gender',
+        'phone', 'email', 'address', 'status', 'room', 'medical_notes'
     ];
 
     protected $useTimestamps = true;
@@ -24,22 +23,12 @@ class PatientModel extends Model
     protected $updatedField = 'updated_at';
 
     protected $validationRules = [
-        'patient_id' => 'required|is_unique[patients.patient_id,id,{id}]',
         'first_name' => 'required|min_length[2]|max_length[100]',
         'last_name' => 'required|min_length[2]|max_length[100]',
-        'date_of_birth' => 'required|valid_date',
-        'gender' => 'required|in_list[male,female,other]',
-        'phone' => 'required|min_length[10]|max_length[20]',
-        'email' => 'permit_empty|valid_email',
-        'blood_type' => 'permit_empty|in_list[A+,A-,B+,B-,AB+,AB-,O+,O-]',
-        'status' => 'required|in_list[active,inactive,deceased]',
+        'status' => 'required|in_list[Active,Inactive,Discharged]',
     ];
 
     protected $validationMessages = [
-        'patient_id' => [
-            'required' => 'Patient ID is required',
-            'is_unique' => 'Patient ID already exists',
-        ],
         'first_name' => [
             'required' => 'First name is required',
             'min_length' => 'First name must be at least 2 characters long',
@@ -48,20 +37,9 @@ class PatientModel extends Model
             'required' => 'Last name is required',
             'min_length' => 'Last name must be at least 2 characters long',
         ],
-        'date_of_birth' => [
-            'required' => 'Date of birth is required',
-            'valid_date' => 'Please enter a valid date',
-        ],
-        'gender' => [
-            'required' => 'Gender is required',
-            'in_list' => 'Please select a valid gender',
-        ],
-        'phone' => [
-            'required' => 'Phone number is required',
-            'min_length' => 'Phone number must be at least 10 digits',
-        ],
-        'email' => [
-            'valid_email' => 'Please enter a valid email address',
+        'status' => [
+            'required' => 'Status is required',
+            'in_list' => 'Please select a valid status',
         ],
     ];
 

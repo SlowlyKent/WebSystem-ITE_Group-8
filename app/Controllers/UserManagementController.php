@@ -14,184 +14,62 @@ class UserManagementController extends Controller
         $this->userModel = new UserModel();
     }
 
+    private function isAllowed()
+    {
+        $role = session()->get('role');
+        return in_array($role, ['admin', 'it_staff']);
+    }
+
     public function index()
     {
-        // Check if user is logged in and has permission
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/login');
-        }
+        if (!$this->isAllowed()) return redirect()->to('/dashboard');
+        $users = $this->userModel->findAll();
+        return view('role_dashboard/admin/UserManagement/index', ['users' => $users]);
+    }
 
-        $userRole = session()->get('role');
-        if (!in_array($userRole, ['admin', 'it_staff'])) {
-            session()->setFlashdata('error', 'Access denied. Insufficient permissions.');
-            return redirect()->to('/dashboard');
-        }
-
-        $data = [
-            'title' => 'User Management',
-            'users' => $this->userModel->getActiveUsers(),
-            'userRole' => $userRole
-        ];
-
-        return view('user_management/index', $data);
+    public function add()
+    {
+        if (!$this->isAllowed()) return redirect()->to('/dashboard');
+        return view('role_dashboard/admin/UserManagement/add_user');
     }
 
     public function create()
     {
-        // Check permissions
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/login');
-        }
-
-        $userRole = session()->get('role');
-        if (!in_array($userRole, ['admin', 'it_staff'])) {
-            session()->setFlashdata('error', 'Access denied. Insufficient permissions.');
-            return redirect()->to('/dashboard');
-        }
-
-        if ($this->request->getMethod() === 'post') {
-            $userData = [
-                'username' => $this->request->getPost('username'),
-                'email' => $this->request->getPost('email'),
-                'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-                'first_name' => $this->request->getPost('first_name'),
-                'last_name' => $this->request->getPost('last_name'),
-                'role' => $this->request->getPost('role'),
-                'status' => 'active',
-                'created_by' => session()->get('userId')
-            ];
-
-            // Validate role assignment permissions
-            if (!$this->canAssignRole($userRole, $userData['role'])) {
-                session()->setFlashdata('error', 'You cannot assign this role. Insufficient permissions.');
-                return redirect()->back()->withInput();
-            }
-
-            if ($this->userModel->insert($userData)) {
-                session()->setFlashdata('success', 'User created successfully');
-                return redirect()->to('/user-management');
-            } else {
-                session()->setFlashdata('error', 'Failed to create user');
-                return redirect()->back()->withInput();
-            }
-        }
+        if (!$this->isAllowed()) return redirect()->to('/dashboard');
+        $role = session()->get('role');
 
         $data = [
-            'title' => 'Create User',
-            'roles' => $this->getAssignableRoles($userRole)
+            'username'   => $this->request->getPost('username'),
+            'email'      => $this->request->getPost('email'),
+            'password'   => $this->request->getPost('password'),
+            'role'       => $this->request->getPost('role'),
+            'first_name' => $this->request->getPost('first_name'),
+            'last_name'  => $this->request->getPost('last_name'),
+            'status'     => 'active',
+            'created_by' => session()->get('id'),
         ];
 
-        return view('user_management/create', $data);
-    }
-
-    public function edit($id = null)
-    {
-        // Check permissions
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/login');
+        // IT Staff cannot create Admin
+        if ($role === 'it_staff' && $data['role'] === 'admin') {
+            return redirect()->back()->with('error', 'IT Staff cannot create Admin accounts.');
         }
 
-        $userRole = session()->get('role');
-        if (!in_array($userRole, ['admin', 'it_staff'])) {
-            session()->setFlashdata('error', 'Access denied. Insufficient permissions.');
-            return redirect()->to('/dashboard');
+        // Validate input
+        if (!$this->validate([
+            'username'   => 'required|min_length[3]|max_length[100]|is_unique[users.username]',
+            'email'      => 'required|valid_email|is_unique[users.email]',
+            'password'   => 'required|min_length[6]',
+            'role'       => 'required|in_list[admin,it_staff,doctor,nurse,pharmacist,receptionist]',
+            'first_name' => 'required|min_length[2]|max_length[100]',
+            'last_name'  => 'required|min_length[2]|max_length[100]',
+        ])) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $user = $this->userModel->find($id);
-        if (!$user) {
-            session()->setFlashdata('error', 'User not found');
-            return redirect()->to('/user-management');
-        }
+        // Hash password before insert
+        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-        if ($this->request->getMethod() === 'post') {
-            $updateData = [
-                'first_name' => $this->request->getPost('first_name'),
-                'last_name' => $this->request->getPost('last_name'),
-                'email' => $this->request->getPost('email'),
-                'status' => $this->request->getPost('status')
-            ];
-
-            // Only allow role change if user has permission
-            if ($this->canAssignRole($userRole, $this->request->getPost('role'))) {
-                $updateData['role'] = $this->request->getPost('role');
-            }
-
-            // Update password if provided
-            $newPassword = $this->request->getPost('new_password');
-            if (!empty($newPassword)) {
-                $updateData['password'] = password_hash($newPassword, PASSWORD_DEFAULT);
-            }
-
-            if ($this->userModel->update($id, $updateData)) {
-                session()->setFlashdata('success', 'User updated successfully');
-                return redirect()->to('/user-management');
-            } else {
-                session()->setFlashdata('error', 'Failed to update user');
-                return redirect()->back()->withInput();
-            }
-        }
-
-        $data = [
-            'title' => 'Edit User',
-            'user' => $user,
-            'roles' => $this->getAssignableRoles($userRole)
-        ];
-
-        return view('user_management/edit', $data);
-    }
-
-    public function delete($id = null)
-    {
-        // Check permissions
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/login');
-        }
-
-        $userRole = session()->get('role');
-        if (!in_array($userRole, ['admin', 'it_staff'])) {
-            session()->setFlashdata('error', 'Access denied. Insufficient permissions.');
-            return redirect()->to('/dashboard');
-        }
-
-        // Prevent self-deletion
-        if ($id == session()->get('userId')) {
-            session()->setFlashdata('error', 'You cannot delete your own account');
-            return redirect()->to('/user-management');
-        }
-
-        $user = $this->userModel->find($id);
-        if (!$user) {
-            session()->setFlashdata('error', 'User not found');
-            return redirect()->to('/user-management');
-        }
-
-        // Soft delete by setting status to inactive
-        if ($this->userModel->update($id, ['status' => 'inactive'])) {
-            session()->setFlashdata('success', 'User deactivated successfully');
-        } else {
-            session()->setFlashdata('error', 'Failed to deactivate user');
-        }
-
-        return redirect()->to('/user-management');
-    }
-
-    private function canAssignRole($currentUserRole, $targetRole)
-    {
-        $roleHierarchy = [
-            'admin' => ['admin', 'it_staff', 'doctor', 'nurse', 'pharmacist', 'receptionist'],
-            'it_staff' => ['doctor', 'nurse', 'pharmacist', 'receptionist'],
-        ];
-
-        return in_array($targetRole, $roleHierarchy[$currentUserRole] ?? []);
-    }
-
-    private function getAssignableRoles($currentUserRole)
-    {
-        $roleHierarchy = [
-            'admin' => ['admin', 'it_staff', 'doctor', 'nurse', 'pharmacist', 'receptionist'],
-            'it_staff' => ['doctor', 'nurse', 'pharmacist', 'receptionist'],
-        ];
-
-        return $roleHierarchy[$currentUserRole] ?? [];
+        $this->userModel->insert($data);
+        return redirect()->to('/user-management')->with('success', 'User created!');
     }
 }
