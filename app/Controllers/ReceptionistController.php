@@ -66,6 +66,12 @@ class ReceptionistController extends Controller
                 'unpaid'  => 10,
                 'pending' => 5,
             ],
+            'report' => [
+                'totalPatients' => 120,
+                'paidBills'     => 85,
+                'pendingBills'  => 25,
+                'overdue'       => 10,
+            ],
             'todayAppointments'    => $todayAppointments,
             'upcomingAppointments' => $upcomingAppointments,
             'finishedAppointments' => $finishedAppointments,
@@ -186,8 +192,10 @@ class ReceptionistController extends Controller
 
         // For now, return dummy patient data
         $patients = [
-            ['id' => 1, 'fullName' => 'John Doe', 'contact' => '09123456789', 'dob' => '1990-05-10'],
-            ['id' => 2, 'fullName' => 'Jane Smith', 'contact' => '09876543210', 'dob' => '1985-08-22'],
+            ['id' => 1, 'fullName' => 'Kim Jennie', 'contact' => '09123456789', 'dob' => '1990-05-10'],
+            ['id' => 2, 'fullName' => 'Kim Jisoo', 'contact' => '09876543210', 'dob' => '1985-08-22'],
+            ['id' => 2, 'fullName' => 'Park Chaeyoung', 'contact' => '09876543980', 'dob' => '1985-04-28'],
+            ['id' => 2, 'fullName' => 'La Lisa Manoban', 'contact' => '09876541376', 'dob' => '1985-11-12'],
         ];
 
         $data = [
@@ -208,13 +216,15 @@ class ReceptionistController extends Controller
 
         // Dummy schedule data
         $doctorSchedule = [
-            ['name' => 'Dr. Alice', 'specialization' => 'Cardiology', 'days' => 'Mon, Wed, Fri'],
-            ['name' => 'Dr. Bob', 'specialization' => 'Pediatrics', 'days' => 'Tue, Thu'],
+            ['name' => 'Dr. Park', 'specialization' => 'Cardiology', 'days' => 'Mon, Wed, Fri'],
+            ['name' => 'Dr. Kim', 'specialization' => 'Pediatrics', 'days' => 'Tue, Thu'],
+            ['name' => 'Dr. Liu', 'specialization' => 'Psychiatrist', 'days' => 'Fri, Sat'],
         ];
 
         $nurseSchedule = [
-            ['name' => 'Nurse Clara', 'shift' => 'Morning', 'days' => 'Mon-Fri'],
-            ['name' => 'Nurse David', 'shift' => 'Night', 'days' => 'Mon-Sat'],
+            ['name' => 'Nurse Chua', 'shift' => 'Morning', 'days' => 'Mon-Fri'],
+            ['name' => 'Nurse Xie', 'shift' => 'Night', 'days' => 'Mon-Sat'],
+            ['name' => 'Nurse Zhou', 'shift' => 'Night', 'days' => 'Sat-Mon'],
         ];
 
         $data = [
@@ -239,7 +249,20 @@ class ReceptionistController extends Controller
             'user' => [
                 'fullName' => $session->get('fullName'),
                 'role'     => $session->get('role'),
-            ]
+            ],
+
+            'pastDue' => [
+                ['name' => 'Kim Jennie', 'due' => '2025-09-01'],
+            ],
+            'unpaid' => [
+                ['name' => 'Min Yoongi', 'due' => '2025-09-20'],
+            ],
+            'pending' => [
+                ['name' => 'Lisa Manoban', 'due' => '2025-09-15'],
+            ],
+            'paid' => [
+                ['name' => 'Roseanne Park', 'date' => '2025-09-05'],
+            ],
         ];
 
         return view('role_dashboard/receptionist/billing', $data);
@@ -255,10 +278,45 @@ class ReceptionistController extends Controller
                 'fullName' => $session->get('fullName'),
                 'role'     => $session->get('role'),
             ],
-            // Placeholder for generated reports
-            'reportData' => []
+
+            // --- Widgets (summary data) ---
+            'widgets' => [
+                'totalPatients' => 120,
+                'paidBills'     => 85,
+                'pendingBills'  => 25,
+                'overdue'       => 10,
+            ],
+
+            // --- Sample reports table data ---
+            'reports' => [
+                [
+                    'id'     => '#RPT001',
+                    'name'   => 'Kim Jennie',
+                    'type'   => 'Billing',
+                    'date'   => '2025-09-05',
+                    'status' => 'Paid',
+                    'total'  => '$250',
+                ],
+                [
+                    'id'     => '#RPT002',
+                    'name'   => 'Park Jimin',
+                    'type'   => 'Appointment',
+                    'date'   => '2025-09-07',
+                    'status' => 'Completed',
+                    'total'  => '$80',
+                ],
+                [
+                    'id'     => '#RPT003',
+                    'name'   => 'Lisa Manoban',
+                    'type'   => 'Billing',
+                    'date'   => '2025-09-08',
+                    'status' => 'Pending',
+                    'total'  => '$150',
+                ],
+            ],
         ];
 
         return view('role_dashboard/receptionist/reports', $data);
     }
+
 }

@@ -2,55 +2,55 @@
 <?= $this->section('content') ?>
 
 <style>
-/* Box wrapper */
-.inside-box {
-    background-color: #052719;
-    min-height: 250px;
-    border-radius: 10px;
-    padding: 40px;
-    margin: 30px 50px;
-    color: white;
-}
+    /* Box wrapper */
+    .inside-box {
+        background-color: #052719;
+        min-height: 250px;
+        border-radius: 10px;
+        padding: 40px;
+        margin: 30px 50px;
+        color: white;
+    }
 
-/* Form fields */
-.patient-form .form-group {
-    margin-bottom: 12px;
-}
+    /* Form fields */
+    .patient-form .form-group {
+        margin-bottom: 12px;
+    }
 
-.patient-form label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: 600;
-    color: white;
-}
+    .patient-form label {
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 600;
+        color: white;
+    }
 
-.patient-form input,
-.patient-form select,
-.patient-form textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: black;
-}
+    .patient-form input,
+    .patient-form select,
+    .patient-form textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        color: black;
+    }
 
-/* Button */
-.patient-form button {
-    background: #ffffff;
-    color: #052719;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
+    /* Button */
+    .patient-form button {
+        background: #ffffff;
+        color: #052719;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
 
-.patient-form button:hover {
-    background: #f1f1f1;
-    transform: scale(1.03);
-}
+    .patient-form button:hover {
+        background: #f1f1f1;
+        transform: scale(1.03);
+    }
 </style>
 
 <!-- Patient Registration Form -->

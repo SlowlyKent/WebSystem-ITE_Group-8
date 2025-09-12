@@ -2,65 +2,70 @@
 <?= $this->section('content') ?>
 
 <style>
-/* Tabs */
-.schedule-tabs {
-    display: flex;
-    gap: 10px;
-    margin: 15px 0;
-}
-.schedule-tabs .tab-btn {
-    padding: 8px 14px;
-    border: 2px solid #052719;
-    border-radius: 6px;
-    background: transparent;
-    font-weight: 600;
-    cursor: pointer;
-    color: #052719;
-}
-.schedule-tabs .tab-btn.active {
-    background: #052719;
-    color: #fff;
-}
+    /* Tabs */
+    .schedule-tabs {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+    }
 
-/* Schedule container bg */
-.schedule-content {
-    background: #052719;   /* dark green background */
-    margin-top: 10px;
-    padding: 20px;
-}
+    .schedule-tabs .tab-btn {
+        padding: 8px 14px;
+        border: 2px solid #052719;
+        border-radius: 6px;
+        background: transparent;
+        font-weight: 600;
+        cursor: pointer;
+        color: #052719;
+    }
 
-/* Table */
-.table-content {
-    margin: 20px auto;
-}
-.schedule-content table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1rem;
-    border: 2px solid white;  /* outer border white */
-}
+    .schedule-tabs .tab-btn.active {
+        background: #052719;
+        color: #fff;
+    }
 
-/* Table header */
-.schedule-content th {
-    background: #878484ff;        /* header white */
-    color: #052719;           /* dark green text */
-    font-weight: bold;
-    padding: 12px 14px;
-    border: 1px solid black;  /* black header borders */
-    text-align: left;
-}
+    /* Schedule container bg */
+    .schedule-content {
+        background: #052719; 
+        margin-top: 10px;
+        padding: 20px;
+    }
 
-/* Table cells */
-.schedule-content td {
-    background: white;  /* blend with green background */
-    color: #052719;             /* text white for readability */
-    padding: 12px 14px;
-    border: 1px solid black;  /* white body cell borders */
-    text-align: left;
-}
+    /* Table */
+    .table-content {
+        margin: 20px auto;
+    }
 
+    .schedule-content table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+        border: 2px solid white;
+    }
+
+    .scedule-content table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+    }
+
+    .schedule-content th,
+    .schedule-content td {
+        padding: 14px;
+        border: 1px solid #ccc;
+        text-align: center;
+        color: white;
+    }
+
+    .schedule-content th {
+        background: white;
+        color: #052719;
+    }
+
+    .schedule-content tr:hover {
+        background:  #1484556e;
+    }
 </style>
-<p class="text-muted">Check availability of doctors and nurses</p>
 
 <div class="schedule-tabs">
     <button type="button" class="tab-btn active" data-target="doctor">Doctor</button>

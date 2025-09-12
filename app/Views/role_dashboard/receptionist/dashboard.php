@@ -69,22 +69,24 @@
 
     .widget-search-form input[type="text"] {
         flex: 1;
-        padding: 6px 10px;
+        padding: 15px 20px;
         border-radius: 6px;
         border: 1px solid #ccc;
-        font-size: 0.9rem;
+        font-size: 1rem;
+    }
 
-
+    .searchbar {
+        margin: 20px 0;
     }
 
     .widget-search-form button {
-        padding: 6px 12px;
+        padding: 15px 20px;
         background: #052719;
         color: white;
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 600;
         transition: background 0.3s ease;
     }
@@ -117,6 +119,15 @@
     }
 
 </style>
+
+
+<!-- Patient Search and lookup -->
+    <div class="searchbar">
+        <form method="get" action="<?= base_url('receptionist/patientsearch_lookup') ?>" class="widget-search-form">
+            <input type="text" name="keyword" placeholder="Search by name, ID, or contact" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
 
 <!-- Stats Cards -->
 <div class="stats-grid">
@@ -215,21 +226,33 @@
             </div>
         </div>
     </div>
-
-    <!-- Patient Search & Lookup Widget -->
-    <!-- Design only with Sample data -->
+        
+    <!-- Billing & Payments Widget -->
     <div class="widget small">
         <div class="widget-title">
-            <i class="fas fa-search"></i> Patient Search & Lookup
+            <i class="fas fa-credit-card"></i> Billing & Payments
         </div>
         <div class="widget-body">
-            <form method="get" action="<?= base_url('receptionist/patientsearch_lookup') ?>" class="widget-search-form">
-                <input type="text" name="keyword" placeholder="Search by name, ID, or contact" required>
-                <button type="submit">Search</button>
-            </form>
+            <div class="inside-box">
+            <table class="appointments-widget-table">
+                <tr>
+                    <td>Unpaid</td>
+                    <td class="text-right"><?= $stats['unpaid'] ?? 11 ?></td>
+                </tr>
+                <tr>
+                    <td>Pending</td>
+                    <td class="text-right"><?= $stats['pending'] ?? 0 ?></td>
+                </tr>
+                <tr>
+                    <td>Paid</td>
+                    <td class="text-right"><?= $stats['Pending'] ?? 0 ?></td>
+                </tr>
+            </table>
+            </div>
+        </ul>
         </div>
     </div>
-        
+
     <!-- Doctor/Nurse Schedule Widget -->
     <!-- Design only with Sample data -->
     <div class="widget large">
@@ -307,32 +330,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Billing & Payments Widget -->
-    <div class="widget small">
-        <div class="widget-title">
-            <i class="fas fa-credit-card"></i> Billing & Payments
-        </div>
-        <div class="widget-body">
-            <div class="inside-box">
-            <table class="appointments-widget-table">
-                <tr>
-                    <td>Unpaid</td>
-                    <td class="text-right"><?= $stats['unpaid'] ?? 11 ?></td>
-                </tr>
-                <tr>
-                    <td>Pending</td>
-                    <td class="text-right"><?= $stats['pending'] ?? 0 ?></td>
-                </tr>
-                <tr>
-                    <td>Paid</td>
-                    <td class="text-right"><?= $stats['Pending'] ?? 0 ?></td>
-                </tr>
-            </table>
-            </div>
-        </ul>
-        </div>
-    </div>
 
     <!-- Reports Widget -->
     <div class="widget small">
@@ -340,10 +337,30 @@
             <i class="fas fa-chart-bar"></i> Reports
         </div>
         <div class="widget-body">
-              ///////////////////////////////////////////code here
+            <div class="reports-widget">
+                <div class="inside-box">
+                    <table class="appointments-widget-table">
+                        <tr>
+                            <td>Total Patients</td>
+                            <td class="text-right"><?= $report['totalPatients'] ?? 0 ?></td>
+                        </tr>
+                        <tr>
+                            <td>Paid</td>
+                            <td class="text-right"><?= $report['paidBills'] ?? 0 ?></td>
+                        </tr>
+                        <tr>
+                            <td>Pending</td>
+                            <td class="text-right"><?= $report['pendingBills'] ?? 0 ?></td>
+                        </tr>
+                        <tr>
+                            <td>Overdue</td>
+                            <td class="text-right"><?= $report['overdue'] ?? 0 ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
 <script>
