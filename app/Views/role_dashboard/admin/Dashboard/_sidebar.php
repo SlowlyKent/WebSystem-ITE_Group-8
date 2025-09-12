@@ -64,7 +64,7 @@
             </li>
             <?php endif; ?>
             <li>
-                <a href="#">
+                <a href="<?= base_url('scheduling') ?>" <?= uri_string() === 'scheduling' ? 'class="active"' : '' ?>>
                     <i class="fas fa-calendar-alt"></i>
                     Scheduling
                 </a>

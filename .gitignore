@@ -1,4 +1,5 @@
 writable/session/*
+writable/debugbar/*
 # Ignore all log files
 *.log
 

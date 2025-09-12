@@ -16,7 +16,6 @@
       font-family: Arial, sans-serif;
       background-color: #b9d3c9;
       overflow-x: hidden;
-      background: #f2f2f2;
       min-height: 100vh;
       width: 100%;
     }
@@ -132,7 +131,7 @@
         }
 
         .schedule-container {
-            background: white;
+            background: #f2f2f2;
             border-radius: 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,.1);
             overflow: hidden;
@@ -246,6 +245,241 @@
             color: #721c24;
         }
 
+        /* Schedule Filter Styles */
+        .schedule-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border: 2px solid #559680;
+            border-radius: 8px;
+            background: white;
+            color: #559680;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: #559680;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #559680;
+            color: white;
+        }
+
+        .filter-btn i {
+            font-size: 16px;
+        }
+
+        /* Status update styles */
+        .status-actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .status-btn {
+            padding: 2px 6px;
+            border: none;
+            border-radius: 4px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .status-btn.start {
+            background: #007bff;
+            color: white;
+        }
+
+        .status-btn.complete {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-btn.cancel {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* Table Styles */
+        .schedule-table-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,.1);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        .schedule-table th {
+            background: #559680;
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .schedule-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .schedule-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .schedule-date .day {
+            font-weight: bold;
+            color: #559680;
+            font-size: 12px;
+        }
+
+        .schedule-date .date {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .schedule-time {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-time .start-time {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .schedule-time .end-time {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .schedule-title strong {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .schedule-title small {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .badge-type.badge-consultation {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-type.badge-surgery {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .badge-type.badge-rounds {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .badge-type.badge-emergency {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+
+        .badge-type.badge-meeting {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .badge-status.badge-scheduled {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-status.badge-in_progress {
+            background: #cce5ff;
+            color: #0066cc;
+        }
+
+        .badge-status.badge-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-status.badge-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .btn-sm {
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-sm:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+        }
 
     /* Responsive Design */
     @media (max-width: 1200px) {
@@ -478,147 +712,186 @@
         </div>
       </header>
 
-      <!-- Date Navigation -->
-      <div class="date-navigation">
-        <button class="btn btn-secondary" onclick="previousWeek()">
-          <i class="fas fa-chevron-left"></i> Previous Week
+
+      <!-- Schedule Filter -->
+      <div class="schedule-filter">
+        <button class="filter-btn active" onclick="filterSchedules('today')" id="todayBtn">
+          <i class="fas fa-calendar-day"></i> Today
         </button>
-        <div class="current-week">
-          <span id="weekDisplay">Week of January 15, 2024</span>
-        </div>
-        <button class="btn btn-secondary" onclick="nextWeek()">
-          Next Week <i class="fas fa-chevron-right"></i>
+        <button class="filter-btn" onclick="filterSchedules('week')" id="weekBtn">
+          <i class="fas fa-calendar-week"></i> This Week
         </button>
       </div>
 
-      <!-- Schedule Grid -->
-      <div class="schedule-container">
-        <div class="schedule-grid">
-          <!-- Monday -->
-          <div class="day-column">
-            <div class="day-header">
-              <h3>Monday</h3>
-              <span class="date">Jan 15</span>
-            </div>
-            <div class="appointments">
-              <div class="appointment-item">
-                <div class="time">09:00 AM</div>
-                <div class="patient-info">
-                  <strong>John Doe</strong>
-                  <span>Regular Checkup</span>
-                  <small>Room: 201-A | Duration: 30 min</small>
-                </div>
-                <div class="status confirmed">Confirmed</div>
-              </div>
-              <div class="appointment-item">
-                <div class="time">10:30 AM</div>
-                <div class="patient-info">
-                  <strong>Jane Smith</strong>
-                  <span>Follow-up</span>
-                  <small>Room: 201-B | Duration: 45 min</small>
-                </div>
-                <div class="status pending">Pending</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tuesday -->
-          <div class="day-column">
-            <div class="day-header">
-              <h3>Tuesday</h3>
-              <span class="date">Jan 16</span>
-            </div>
-            <div class="appointments">
-              <div class="appointment-item">
-                <div class="time">08:00 AM</div>
-                <div class="patient-info">
-                  <strong>Mike Johnson</strong>
-                  <span>Consultation</span>
-                  <small>Room: 202-A | Duration: 60 min</small>
-                </div>
-                <div class="status confirmed">Confirmed</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wednesday -->
-          <div class="day-column">
-            <div class="day-header">
-              <h3>Wednesday</h3>
-              <span class="date">Jan 17</span>
-            </div>
-            <div class="appointments">
-              <div class="appointment-item">
-                <div class="time">11:00 AM</div>
-                <div class="patient-info">
-                  <strong>Sarah Wilson</strong>
-                  <span>Annual Physical</span>
-                  <small>Room: 203-A | Duration: 90 min</small>
-                </div>
-                <div class="status confirmed">Confirmed</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Thursday -->
-          <div class="day-column">
-            <div class="day-header">
-              <h3>Thursday</h3>
-              <span class="date">Jan 18</span>
-            </div>
-            <div class="appointments">
-              <!-- No appointments -->
-            </div>
-          </div>
-
-          <!-- Friday -->
-          <div class="day-column">
-            <div class="day-header">
-              <h3>Friday</h3>
-              <span class="date">Jan 19</span>
-            </div>
-            <div class="appointments">
-              <div class="appointment-item">
-                <div class="time">02:00 PM</div>
-                <div class="patient-info">
-                  <strong>Robert Brown</strong>
-                  <span>Emergency Visit</span>
-                  <small>Room: ER-1 | Duration: 45 min</small>
-                </div>
-                <div class="status urgent">Urgent</div>
-              </div>
+      <!-- Schedule Table -->
+      <div class="schedule-table-container">
+        <div class="table-responsive">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Patient</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <!-- Today's schedules (default view) -->
+              <?php if (!empty($todaySchedules)): ?>
+                <?php foreach ($todaySchedules as $schedule): ?>
+                  <tr class="schedule-row today-schedule">
+                    <td>
+                      <div class="schedule-date">
+                        <span class="day"><?= date('D', strtotime($schedule['schedule_date'])) ?></span>
+                        <span class="date"><?= date('M j', strtotime($schedule['schedule_date'])) ?></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="schedule-time">
+                        <span class="start-time"><?= date('g:i A', strtotime($schedule['start_time'])) ?></span>
+                        <span class="end-time">- <?= date('g:i A', strtotime($schedule['end_time'])) ?></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="schedule-title">
+                        <strong><?= esc($schedule['description']) ?></strong>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-type badge-<?= $schedule['schedule_type'] ?>">
+                        <?= ucfirst($schedule['schedule_type']) ?>
+                      </span>
+                    </td>
+                    <td><?= esc($schedule['location']) ?></td>
+                    <td>
+                      <?php if (!empty($schedule['patient_first_name'])): ?>
+                        <?= esc($schedule['patient_first_name'] . ' ' . $schedule['patient_last_name']) ?>
+                      <?php else: ?>
+                        <span class="text-muted">No patient assigned</span>
+                      <?php endif; ?>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn btn-sm btn-info" onclick="viewDetails(<?= $schedule['id'] ?>)">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              
+              <!-- Weekly schedules (hidden by default) -->
+              <?php if (!empty($weeklySchedules)): ?>
+                <?php foreach ($weeklySchedules as $schedule): ?>
+                  <tr class="schedule-row week-schedule" style="display: none;">
+                    <td>
+                      <div class="schedule-date">
+                        <span class="day"><?= date('D', strtotime($schedule['schedule_date'])) ?></span>
+                        <span class="date"><?= date('M j', strtotime($schedule['schedule_date'])) ?></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="schedule-time">
+                        <span class="start-time"><?= date('g:i A', strtotime($schedule['start_time'])) ?></span>
+                        <span class="end-time">- <?= date('g:i A', strtotime($schedule['end_time'])) ?></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="schedule-title">
+                        <strong><?= esc($schedule['description']) ?></strong>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-type badge-<?= $schedule['schedule_type'] ?>">
+                        <?= ucfirst($schedule['schedule_type']) ?>
+                      </span>
+                    </td>
+                    <td><?= esc($schedule['location']) ?></td>
+                    <td>
+                      <?php if (!empty($schedule['patient_first_name'])): ?>
+                        <?= esc($schedule['patient_first_name'] . ' ' . $schedule['patient_last_name']) ?>
+                      <?php else: ?>
+                        <span class="text-muted">No patient assigned</span>
+                      <?php endif; ?>
+                    </td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="btn btn-sm btn-info" onclick="viewDetails(<?= $schedule['id'] ?>)">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              
+              <!-- Empty state -->
+              <tr id="emptyState" style="display: none;">
+                <td colspan="8" class="text-center text-muted py-4">
+                  <i class="fas fa-calendar-times fa-2x mb-2"></i>
+                  <p id="emptyMessage">No schedules found</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
             </div>
           </div>
         </div>
       </div>
-      
+    </main>
+  </div>
 
   <script>
-    // Week navigation functionality
-    let currentWeek = new Date();
     
-    function updateWeekDisplay() {
-      const weekStart = new Date(currentWeek);
-      weekStart.setDate(currentWeek.getDate() - currentWeek.getDay() + 1); // Monday
-      
-      const options = { month: 'long', day: 'numeric', year: 'numeric' };
-      document.getElementById('weekDisplay').textContent = 
-        `Week of ${weekStart.toLocaleDateString('en-US', options)}`;
+    // Filter schedules function
+    function filterSchedules(filter) {
+        const todayBtn = document.getElementById('todayBtn');
+        const weekBtn = document.getElementById('weekBtn');
+        const todaySchedules = document.querySelectorAll('.today-schedule');
+        const weekSchedules = document.querySelectorAll('.week-schedule');
+        const emptyState = document.getElementById('emptyState');
+        const emptyMessage = document.getElementById('emptyMessage');
+        
+        // Update button states
+        todayBtn.classList.remove('active');
+        weekBtn.classList.remove('active');
+        
+        if (filter === 'today') {
+            todayBtn.classList.add('active');
+            
+            // Show today's schedules, hide weekly schedules
+            todaySchedules.forEach(row => row.style.display = '');
+            weekSchedules.forEach(row => row.style.display = 'none');
+            
+            // Check if there are today's schedules
+            if (todaySchedules.length === 0) {
+                emptyState.style.display = '';
+                emptyMessage.textContent = 'No schedules for today';
+            } else {
+                emptyState.style.display = 'none';
+            }
+            
+        } else if (filter === 'week') {
+            weekBtn.classList.add('active');
+            
+            // Show weekly schedules, hide today's schedules
+            todaySchedules.forEach(row => row.style.display = 'none');
+            weekSchedules.forEach(row => row.style.display = '');
+            
+            // Check if there are weekly schedules
+            if (weekSchedules.length === 0) {
+                emptyState.style.display = '';
+                emptyMessage.textContent = 'No schedules for this week';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
     }
     
-    function previousWeek() {
-      currentWeek.setDate(currentWeek.getDate() - 7);
-      updateWeekDisplay();
-    }
-    
-    function nextWeek() {
-      currentWeek.setDate(currentWeek.getDate() + 7);
-      updateWeekDisplay();
-    }
-    
-    
-    // Initialize week display
-    updateWeekDisplay();
   </script>
 </body>
 </html>
