@@ -25,63 +25,7 @@
         width: 100%;
         height: auto;
         margin: 0 0 20px 0;
-        left: 0;
-        top: 0;
         border-radius: 10px;
-    }
-    
-    .sidebar nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .sidebar nav li {
-        flex: 1;
-        min-width: 150px;
-        text-align: center;
-    }
-
-    .sidebar .profile {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-
-    .sidebar .avatar {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar {
-        padding: 10px;
-    }
-
-    .sidebar nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .sidebar nav li {
-        min-width: auto;
-        padding: 8px;
-        font-size: 13px;
-    }
-
-    .sidebar .profile {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .sidebar .avatar {
-        width: 50px;
-        height: 50px;
     }
 }
 
@@ -173,14 +117,12 @@
 }
 
 .sidebar nav li a {
-    padding-left: 0px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     transition: color 0.3s;
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
 .sidebar nav li:hover i,
@@ -193,42 +135,48 @@
   <h2>HMS</h2>
   <div class="profile">
     <div class="avatar">
-        <i class="fas fa-user-md"></i>
+        <i class="fas fa-user-nurse"></i>
     </div>
-    <p><?= session()->get('fullName') ?: 'Doctor' ?></p>
-    <small>Doctor Dashboard</small>
+    <p><?= session()->get('fullName') ?: 'Nurse' ?></p>
+    <small>Nurse Dashboard</small>
   </div>
 
   <nav>
     <ul>
         <li>
-            <a href="<?= base_url('doctor/dashboard') ?>" 
-               <?= uri_string() === 'doctor/dashboard' ? 'class="active"' : '' ?>>
+            <a href="<?= base_url('nurse/dashboard') ?>" 
+               <?= uri_string() === 'nurse/dashboard' ? 'class="active"' : '' ?>>
                <i class="fas fa-tachometer-alt"></i> Dashboard
             </a>
         </li>
         <li>
-            <a href="<?= base_url('doctor/patients') ?>" 
-               <?= uri_string() === 'doctor/patients' ? 'class="active"' : '' ?>>
-               <i class="fas fa-user-injured"></i> Patient Records
+            <a href="<?= base_url('nurse/patient-assignments') ?>" 
+               <?= uri_string() === 'nurse/patient-assignments' ? 'class="active"' : '' ?>>
+               <i class="fas fa-user-injured"></i> Patient Assignments
             </a>
         </li>
         <li>
-            <a href="<?= base_url('doctor/my-schedule') ?>" 
-               <?= uri_string() === 'doctor/my-schedule' ? 'class="active"' : '' ?>>
-               <i class="fas fa-calendar-check"></i> My Schedule
+            <a href="<?= base_url('nurse/vital-signs') ?>" 
+               <?= uri_string() === 'nurse/vital-signs' ? 'class="active"' : '' ?>>
+               <i class="fas fa-heartbeat"></i> Vital Signs
             </a>
         </li>
         <li>
-            <a href="<?= base_url('doctor/lab-results') ?>" 
-               <?= uri_string() === 'doctor/lab-results' ? 'class="active"' : '' ?>>
-               <i class="fas fa-flask"></i> Lab Results
+            <a href="<?= base_url('nurse/medication-admin') ?>" 
+               <?= uri_string() === 'nurse/medication-admin' ? 'class="active"' : '' ?>>
+               <i class="fas fa-pills"></i> Medication Administration
             </a>
         </li>
         <li>
-            <a href="<?= base_url('doctor/prescriptions') ?>" 
-               <?= uri_string() === 'doctor/prescriptions' ? 'class="active"' : '' ?>>
-               <i class="fas fa-pills"></i> Prescriptions
+            <a href="<?= base_url('nurse/nursing-notes') ?>" 
+               <?= uri_string() === 'nurse/nursing-notes' ? 'class="active"' : '' ?>>
+               <i class="fas fa-clipboard-list"></i> Nursing Notes
+            </a>
+        </li>
+        <li>
+            <a href="<?= base_url('nurse/shift-handover') ?>" 
+               <?= uri_string() === 'nurse/shift-handover' ? 'class="active"' : '' ?>>
+               <i class="fas fa-exchange-alt"></i> Shift Handover
             </a>
         </li>
     </ul>

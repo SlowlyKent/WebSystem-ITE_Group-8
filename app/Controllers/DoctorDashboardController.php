@@ -3,38 +3,74 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ScheduleModel;
 use CodeIgniter\Controller;
 
 class DoctorDashboardController extends Controller
 {
     protected $userModel;
+    protected $scheduleModel;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->scheduleModel = new ScheduleModel();
         
         // Check if user is logged in
         if (!session()->get('isLoggedIn')) {
-            redirect()->to('/login')->send();
-            exit;
+            return redirect()->to('/login');
         }
+
+        $userRole = session()->get('role');
+        if ($userRole !== 'doctor') {
+            return redirect()->to('/dashboard')->with('error', 'Access denied');
+        }
+
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
         
-        // Check if user has doctor role
-        if (session()->get('role') !== 'doctor') {
-            redirect()->to('/dashboard')->send();
-            exit;
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'User not found');
         }
     }
 
     public function index()
     {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+
+        $userRole = session()->get('role');
+        if ($userRole !== 'doctor') {
+            return redirect()->to('/dashboard')->with('error', 'Access denied');
+        }
+
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
+        
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'User not found');
+        }
+        
+        // Get today's schedules
+        $todaySchedules = $this->scheduleModel->getTodaySchedules($userId);
+        
+        // Get upcoming schedules (next 7 days)
+        $upcomingSchedules = $this->scheduleModel->getUpcomingSchedules($userId, 5);
+        
+        // Get schedule statistics
+        $scheduleStats = $this->scheduleModel->getScheduleStats($userId);
+
         $data = [
             'title' => 'Doctor Dashboard',
             'user' => [
-                'name' => session()->get('fullName'),
-                'role' => session()->get('role'),
-                'username' => session()->get('username')
-            ]
+                'name' => (isset($user['first_name']) ? $user['first_name'] : '') . ' ' . (isset($user['last_name']) ? $user['last_name'] : ''),
+                'role' => isset($user['role']) ? $user['role'] : 'doctor',
+                'username' => isset($user['username']) ? $user['username'] : ''
+            ],
+            'todaySchedules' => $todaySchedules,
+            'upcomingSchedules' => $upcomingSchedules,
+            'scheduleStats' => $scheduleStats
         ];
 
         return view('role_dashboard/doctor/doctor', $data);
@@ -62,13 +98,39 @@ class DoctorDashboardController extends Controller
 
     public function mySchedule()
     {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+
+        $userRole = session()->get('role');
+        if ($userRole !== 'doctor') {
+            return redirect()->to('/dashboard')->with('error', 'Access denied');
+        }
+
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
+        
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'User not found');
+        }
+
+        // Get weekly schedules (current week)
+        $startOfWeek = date('Y-m-d', strtotime('monday this week'));
+        $endOfWeek = date('Y-m-d', strtotime('sunday this week'));
+        $weeklySchedules = $this->scheduleModel->getSchedulesByDoctor($userId, $startOfWeek, $endOfWeek);
+        
+        // Get today's schedules
+        $todaySchedules = $this->scheduleModel->getSchedulesByDoctor($userId, date('Y-m-d'), date('Y-m-d'));
+
         $data = [
             'title' => 'My Schedule',
+            'currentPage' => 'my-schedule',
             'user' => [
-                'name' => session()->get('fullName'),
-                'role' => session()->get('role'),
-                'username' => session()->get('username')
-            ]
+                'name' => (isset($user['first_name']) ? $user['first_name'] : '') . ' ' . (isset($user['last_name']) ? $user['last_name'] : ''),
+                'role' => isset($user['role']) ? $user['role'] : 'doctor'
+            ],
+            'weeklySchedules' => $weeklySchedules,
+            'todaySchedules' => $todaySchedules
         ];
 
         return view('role_dashboard/doctor/myshedule', $data);
@@ -146,22 +208,21 @@ class DoctorDashboardController extends Controller
 
         $this->userModel->update($userId, $data);
         
-        // Update session data
-        session()->set('fullName', $data['first_name'] . ' ' . $data['last_name']);
-        session()->set('email', $data['email']);
-        
         session()->setFlashdata('success', 'Profile updated successfully');
         return redirect()->to('/doctor/profile');
     }
 
     public function settings()
     {
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
+        
         $data = [
             'title' => 'Doctor Settings',
             'user' => [
-                'name' => session()->get('fullName'),
-                'role' => session()->get('role'),
-                'username' => session()->get('username')
+                'name' => (isset($user['first_name']) ? $user['first_name'] : '') . ' ' . (isset($user['last_name']) ? $user['last_name'] : ''),
+                'role' => isset($user['role']) ? $user['role'] : 'doctor',
+                'username' => isset($user['username']) ? $user['username'] : ''
             ]
         ];
 
@@ -170,12 +231,15 @@ class DoctorDashboardController extends Controller
 
     public function labRequests()
     {
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
+        
         $data = [
             'title' => 'Lab Requests & Results',
             'user' => [
-                'name' => session()->get('fullName'),
-                'role' => session()->get('role'),
-                'username' => session()->get('username')
+                'name' => (isset($user['first_name']) ? $user['first_name'] : '') . ' ' . (isset($user['last_name']) ? $user['last_name'] : ''),
+                'role' => isset($user['role']) ? $user['role'] : 'doctor',
+                'username' => isset($user['username']) ? $user['username'] : ''
             ]
         ];
 
@@ -184,12 +248,15 @@ class DoctorDashboardController extends Controller
 
     public function prescriptions()
     {
+        $userId = session()->get('userId');
+        $user = $this->userModel->find($userId);
+        
         $data = [
             'title' => 'Prescriptions',
             'user' => [
-                'name' => session()->get('fullName'),
-                'role' => session()->get('role'),
-                'username' => session()->get('username')
+                'name' => (isset($user['first_name']) ? $user['first_name'] : '') . ' ' . (isset($user['last_name']) ? $user['last_name'] : ''),
+                'role' => isset($user['role']) ? $user['role'] : 'doctor',
+                'username' => isset($user['username']) ? $user['username'] : ''
             ]
         ];
 

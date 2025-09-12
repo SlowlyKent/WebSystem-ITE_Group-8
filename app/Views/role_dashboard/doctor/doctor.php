@@ -35,11 +35,10 @@
             color: white;
             padding: 15px;
             border-radius: 15px;
-            margin: 15px;
             height: calc(100vh - 30px);
             position: fixed;
-            left: 0;
-            top: 0;
+            left: 15px;
+            top: 15px;
             z-index: 1000;
             overflow-y: auto;
         }
@@ -220,6 +219,189 @@
             color: #b9d3c9;
         }
 
+        /* Schedule List Styles */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #00ff95;
+        }
+
+        .schedule-time {
+            font-weight: bold;
+            color: #052719;
+            min-width: 100px;
+            font-size: 14px;
+        }
+
+        .schedule-details {
+            flex: 1;
+        }
+
+        .schedule-details h4 {
+            margin: 0 0 4px 0;
+            color: #052719;
+            font-size: 14px;
+        }
+
+        .schedule-details p {
+            margin: 0 0 6px 0;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .schedule-type, .schedule-location {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-right: 6px;
+        }
+
+        .schedule-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-scheduled {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-in_progress {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Upcoming Schedules */
+        .upcoming-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .upcoming-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .upcoming-date {
+            background: #052719;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 50px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .upcoming-details h5 {
+            margin: 0 0 4px 0;
+            color: #052719;
+            font-size: 13px;
+        }
+
+        .upcoming-details p {
+            margin: 0 0 4px 0;
+            color: #666;
+            font-size: 11px;
+        }
+
+        .upcoming-type {
+            background: #e9ecef;
+            color: #495057;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        /* Sidebar specific responsive adjustments */
+        @media (max-width: 992px) {
+            .sidebar nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .sidebar nav li {
+                flex: 1;
+                min-width: 150px;
+                text-align: center;
+            }
+
+            .sidebar .profile {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .sidebar .avatar {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                padding: 10px;
+            }
+
+            .sidebar nav ul {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .sidebar nav li {
+                min-width: auto;
+                padding: 8px;
+                font-size: 13px;
+            }
+
+            .sidebar .profile {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sidebar .avatar {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .main {
@@ -238,6 +420,8 @@
                 width: 100%;
                 height: auto;
                 margin: 0 0 20px 0;
+                left: 0;
+                top: 0;
                 border-radius: 10px;
             }
 
@@ -379,35 +563,76 @@
             <section class="stats">
                 <div class="card">
                     <i class="fa-solid fa-calendar-check"></i>
-                    <span>8</span>
-                    <p>Today's Appointments</p>
+                    <span><?= isset($scheduleStats['today_total']) ? $scheduleStats['today_total'] : 0 ?></span>
+                    <p>Today's Schedules</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-vials"></i>
-                    <span>5</span>
-                    <p>Pending Lab Results</p>
+                    <i class="fa-solid fa-clock"></i>
+                    <span><?= isset($scheduleStats['today_pending']) ? $scheduleStats['today_pending'] : 0 ?></span>
+                    <p>Pending Today</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-pills"></i>
-                    <span>12</span>
-                    <p>Prescribed Medicines</p>
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span><?= isset($scheduleStats['today_completed']) ? $scheduleStats['today_completed'] : 0 ?></span>
+                    <p>Completed Today</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-week"></i>
+                    <span><?= isset($scheduleStats['upcoming_week']) ? $scheduleStats['upcoming_week'] : 0 ?></span>
+                    <p>This Week</p>
                 </div>
             </section>
 
             <!-- Content Grid -->
             <div class="content-grid">
                 <div class="appointments-section">
-                    <h2><i class="fas fa-calendar-check"></i> Today's Appointments</h2>
-                    <div class="appointments-placeholder">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>Appointment schedule will be displayed here</p>
-                    </div>
+                    <h2><i class="fas fa-calendar-check"></i> Today's Schedules</h2>
+                    <?php if (!empty($todaySchedules)): ?>
+                        <div class="schedule-list">
+                            <?php foreach ($todaySchedules as $schedule): ?>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">
+                                        <?= date('H:i', strtotime($schedule['start_time'])) ?> - <?= date('H:i', strtotime($schedule['end_time'])) ?>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <h4><?= esc($schedule['description']) ?></h4>
+                                        <span class="schedule-type"><?= ucfirst($schedule['schedule_type']) ?></span>
+                                        <?php if ($schedule['location']): ?>
+                                            <span class="schedule-location"><i class="fas fa-map-marker-alt"></i> <?= esc($schedule['location']) ?></span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="appointments-placeholder">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>No schedules for today</p>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="patient-notes-section">
-                    <h2><i class="fas fa-notes-medical"></i> Recent Notes</h2>
-                    <div class="notes-placeholder">
-                        <p>Recent patient notes and updates</p>
-                    </div>
+                    <h2><i class="fas fa-calendar-week"></i> Upcoming Schedules</h2>
+                    <?php if (!empty($upcomingSchedules)): ?>
+                        <div class="upcoming-list">
+                            <?php foreach ($upcomingSchedules as $schedule): ?>
+                                <div class="upcoming-item">
+                                    <div class="upcoming-date">
+                                        <?= date('M d', strtotime($schedule['schedule_date'])) ?>
+                                    </div>
+                                    <div class="upcoming-details">
+                                        <h5><?= esc($schedule['description']) ?></h5>
+                                        <p><?= date('H:i', strtotime($schedule['start_time'])) ?> - <?= date('H:i', strtotime($schedule['end_time'])) ?></p>
+                                        <span class="upcoming-type"><?= ucfirst($schedule['schedule_type']) ?></span>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="notes-placeholder">
+                            <p>No upcoming schedules</p>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </main>

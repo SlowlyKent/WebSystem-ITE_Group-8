@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?= base_url('database-status') ?>" <?= uri_string() === 'database-status' ? 'class="active"' : '' ?>>
                     <i class="fas fa-database"></i>
                     Database Status
                 </a>
@@ -64,7 +64,7 @@
             </li>
             <?php endif; ?>
             <li>
-                <a href="#">
+                <a href="<?= base_url('scheduling') ?>" <?= uri_string() === 'scheduling' ? 'class="active"' : '' ?>>
                     <i class="fas fa-calendar-alt"></i>
                     Scheduling
                 </a>

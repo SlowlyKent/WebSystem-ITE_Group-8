@@ -27,7 +27,7 @@ $routes->get('user-management/add', 'UserManagementController::add');
 $routes->post('user-management/add', 'UserManagementController::create');
 $routes->post('user-management/create', 'UserManagementController::create'); // Added to fix 404 on create
 
-// Role-based dashboards
+// Role-based dashboards - Doctor
 $routes->get('doctor/dashboard', 'DoctorDashboardController::index');
 $routes->get('doctor/patients', 'DoctorDashboardController::patients');
 $routes->get('doctor/my-schedule', 'DoctorDashboardController::mySchedule');
@@ -38,6 +38,7 @@ $routes->get('doctor/profile', 'DoctorDashboardController::profile');
 $routes->post('doctor/profile', 'DoctorDashboardController::updateProfile');
 $routes->get('doctor/settings', 'DoctorDashboardController::settings');
 
+// Role-based dashboards - Receptionist
 $routes->group('role_dashboard/receptionist', function($routes) {
 $routes->get('dashboard', 'ReceptionistController::index');
 $routes->get('patientregistration', 'ReceptionistController::patientregistration');
@@ -48,6 +49,29 @@ $routes->get('scheduleviewer', 'ReceptionistController::scheduleviewer');
 $routes->get('billing', 'ReceptionistController::billing');
 $routes->get('reports', 'ReceptionistController::reports');
 });
+
+// Role-based dashboards - Nurse
+$routes->get('nurse/dashboard', 'NurseDashboardController::index');
+$routes->get('nurse/patient-assignments', 'NurseDashboardController::patientAssignments');
+$routes->get('nurse/vital-signs', 'NurseDashboardController::vitalSigns');
+$routes->get('nurse/medication-admin', 'NurseDashboardController::medicationAdmin');
+$routes->get('nurse/nursing-notes', 'NurseDashboardController::nursingNotes');
+$routes->get('nurse/shift-handover', 'NurseDashboardController::shiftHandover');
+$routes->get('nurse/profile', 'NurseDashboardController::profile');
+$routes->post('nurse/profile/update', 'NurseDashboardController::updateProfile');
+
+// Scheduling routes
+$routes->get('scheduling', 'SchedulingController::index');
+$routes->get('scheduling/add', 'SchedulingController::add');
+$routes->post('scheduling/add', 'SchedulingController::add');
+$routes->get('scheduling/get/(:num)', 'SchedulingController::get/$1');
+$routes->post('scheduling/update/(:num)', 'SchedulingController::update/$1');
+$routes->get('scheduling/edit/(:num)', 'SchedulingController::edit/$1');
+$routes->post('scheduling/edit/(:num)', 'SchedulingController::edit/$1');
+$routes->get('scheduling/delete/(:num)', 'SchedulingController::delete/$1');
+$routes->get('scheduling/get-schedules', 'SchedulingController::getSchedules');
+$routes->post('scheduling/update-status', 'SchedulingController::updateStatus');
+$routes->get('scheduling/details/(:num)', 'SchedulingController::getScheduleDetails/$1');
 
 // Default route - redirect to login
 $routes->get('/', 'AuthController::index');
@@ -61,5 +85,28 @@ $routes->get('/patients/edit/(:num)', 'PatientController::edit/$1');
 $routes->post('/patients/update/(:num)', 'PatientController::update/$1');
 $routes->get('/patients/delete/(:num)', 'PatientController::delete/$1');
 
+// Database Status route (with authentication filter)
+$routes->get('database-status', 'DatabaseController::status', ['filter' => 'auth']);
+
+// Scheduling routes
+$routes->get('scheduling', 'SchedulingController::index');
+$routes->post('scheduling/add', 'SchedulingController::add');
+$routes->get('scheduling/edit/(:num)', 'SchedulingController::edit/$1');
+$routes->get('scheduling/delete/(:num)', 'SchedulingController::delete/$1');
+
 // Temporary route for checking tables
 $routes->get('/check-tables', 'CheckTables::index');
+
+// Setup route for creating schedules table
+$routes->get('/setup/create-schedules-table', 'SetupController::createSchedulesTable');
+
+// Prescription API routes
+$routes->get('api/prescriptions', 'PrescriptionController::index');
+$routes->post('api/prescriptions/create', 'PrescriptionController::create');
+$routes->get('api/prescriptions/show/(:num)', 'PrescriptionController::show/$1');
+$routes->post('api/prescriptions/update/(:num)', 'PrescriptionController::update/$1');
+$routes->post('api/prescriptions/update-status/(:num)', 'PrescriptionController::updateStatus/$1');
+$routes->get('api/prescriptions/patient/(:num)', 'PrescriptionController::getByPatient/$1');
+$routes->get('api/prescriptions/assigned-patients', 'PrescriptionController::getAssignedPatients');
+$routes->post('api/prescriptions/delete/(:num)', 'PrescriptionController::delete/$1');
+$routes->delete('api/prescriptions/(:num)', 'PrescriptionController::delete/$1');

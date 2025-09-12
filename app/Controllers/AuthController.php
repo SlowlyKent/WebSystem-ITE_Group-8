@@ -59,6 +59,8 @@ class AuthController extends Controller
                     return redirect()->to('/role_dashboard/receptionist/dashboard'); 
                 case 'doctor':
                     return redirect()->to('/doctor/dashboard');
+                case 'nurse':
+                    return redirect()->to('/nurse/dashboard');
                 case 'admin':
                 case 'it_staff':
                 default:
