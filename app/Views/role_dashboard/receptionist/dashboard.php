@@ -114,7 +114,7 @@
     }
 
     .schedule-table th {
-        background: #f5f5f5;
+        background: #6b6969ff;
         font-weight: bold;
     }
 
@@ -160,7 +160,6 @@
 <div class="widgets-grid">
 
     <!-- Patient Registration Widget -->
-    <!-- Design only with Sample data -->
     <div class="widget small">
         <div class="widget-title">
             <i class="fas fa-user-plus"></i> Patient Registration
@@ -254,7 +253,6 @@
     </div>
 
     <!-- Doctor/Nurse Schedule Widget -->
-    <!-- Design only with Sample data -->
     <div class="widget large">
         <div class="widget-title">
             <i class="fas fa-calendar-alt"></i> Doctor/Nurse Schedule
@@ -270,28 +268,26 @@
                 <table class="schedule-table">
                     <thead>
                         <tr>
-                            <th>Doctor</th>
-                            <th>Availability</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if (!empty($doctorSchedule)): ?>
-                            <?php 
-                            $found = false;
-                            foreach ($doctorSchedule as $doc): 
-                                if (stripos($doc['days'], $today) !== false): 
-                                    $found = true; ?>
-                                    <tr>
-                                        <td><?= esc($doc['name']) ?></td>
-                                        <td>Available Today (<?= esc($today) ?>)</td>
-                                    </tr>
-                                <?php endif;
-                            endforeach; ?>
-                            <?php if (!$found): ?>
-                                <tr><td colspan="2">No doctors available today.</td></tr>
-                            <?php endif; ?>
+                            <?php foreach($doctorSchedule as $doc): ?>
+                                <tr>
+                                    <td><?= esc($doc['doctor_first_name'] . ' ' . $doc['doctor_last_name']) ?></td>
+                                    <td><?= esc($doc['schedule_date']) ?></td>
+                                    <td><?= esc($doc['start_time'] . ' - ' . $doc['end_time']) ?></td>
+                                    <td><?= esc($doc['location']) ?></td>
+                                    <td><?= esc($doc['schedule_type']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         <?php else: ?>
-                            <tr><td colspan="2">No doctor schedules available.</td></tr>
+                            <tr><td colspan="5">No doctor schedules available.</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
@@ -302,28 +298,26 @@
                 <table class="schedule-table">
                     <thead>
                         <tr>
-                            <th>Nurse</th>
-                            <th>Availability</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if (!empty($nurseSchedule)): ?>
-                            <?php 
-                            $found = false;
-                            foreach ($nurseSchedule as $nurse): 
-                                if (stripos($nurse['days'], $today) !== false): 
-                                    $found = true; ?>
-                                    <tr>
-                                        <td><?= esc($nurse['name']) ?></td>
-                                        <td>Available Today (<?= esc($today) ?>)</td>
-                                    </tr>
-                                <?php endif;
-                            endforeach; ?>
-                            <?php if (!$found): ?>
-                                <tr><td colspan="2">No nurses available today.</td></tr>
-                            <?php endif; ?>
+                            <?php foreach($nurseSchedule as $nurse): ?>
+                                <tr>
+                                    <td><?= esc($nurse['nurse_first_name'] . ' ' . $nurse['nurse_last_name']) ?></td>
+                                    <td><?= esc($nurse['schedule_date']) ?></td>
+                                    <td><?= esc($nurse['start_time'] . ' - ' . $nurse['end_time']) ?></td>
+                                    <td><?= esc($nurse['location']) ?></td>
+                                    <td><?= esc($nurse['schedule_type']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         <?php else: ?>
-                            <tr><td colspan="2">No nurse schedules available.</td></tr>
+                            <tr><td colspan="5">No nurse schedules available.</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
@@ -364,11 +358,25 @@
 </div>
 
 <script>
-    // Schedule tabs functionality
     document.querySelectorAll('.schedule-tab').forEach(tab => {
         tab.addEventListener('click', function() {
+            // Remove active class from all buttons
             document.querySelectorAll('.schedule-tab').forEach(t => t.classList.remove('active'));
             this.classList.add('active');
+
+            // Hide all contents
+            document.querySelectorAll('.schedule-content').forEach(c => {
+                c.style.display = 'none';
+                c.classList.remove('active');
+            });
+
+            // Show the targeted content
+            const target = this.getAttribute('data-target');
+            const content = document.getElementById(target);
+            if(content){
+                content.style.display = 'block';
+                content.classList.add('active');
+            }
         });
     });
 

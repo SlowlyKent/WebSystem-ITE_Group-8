@@ -159,6 +159,18 @@
                     <?php endforeach; ?>
                 </select>
             </div>
+            
+            <div class="form-group">
+                <label>Nurse</label>
+                <select name="nurse_id" class="form-control">
+                    <option value="">-- Select Nurse (optional) --</option>
+                    <?php foreach($nurses as $nurse): ?>
+                        <option value="<?= esc($nurse['id']) ?>">
+                            <?= esc($nurse['first_name'] . ' ' . $nurse['last_name']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
             <div class="form-group">
                 <label>Date</label>

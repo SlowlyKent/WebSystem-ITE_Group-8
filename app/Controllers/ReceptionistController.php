@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\AppointmentModel;
 use App\Models\DoctorModel;
+use App\Models\NurseModel;
 
 class ReceptionistController extends Controller
 {
@@ -23,11 +24,29 @@ class ReceptionistController extends Controller
 
         $session = session();
         $appointmentModel = new \App\Models\AppointmentModel();
+        $scheduleModel = new \App\Models\ScheduleModel();
 
         $todayAppointments    = $appointmentModel->getTodaysAppointmentsWithDetails();
         $upcomingAppointments = $appointmentModel->getUpcomingAppointmentsWithDetails();
         $finishedAppointments = $appointmentModel->getCompletedAppointmentsWithDetails();
 
+        // Fetch today's schedules for doctors & nurses
+        $today = date('Y-m-d');
+        $doctorSchedule = $scheduleModel->getSchedulesForCalendar($today, date('Y-m-d', strtotime('+3 days')));
+        $nurseSchedule  = $scheduleModel->getSchedulesForCalendar($today, date('Y-m-d', strtotime('+3 days')), null); 
+
+        // Add doctor full name
+        foreach ($doctorSchedule as &$doc) {
+            $doc['doctor_first_name'] = $doc['first_name'] ?? 'Doctor';
+            $doc['doctor_last_name']  = $doc['last_name'] ?? '';
+        }
+
+        // Add nurse full name (use doctor join data as placeholder)
+        foreach ($nurseSchedule as &$nurse) {
+            $nurse['nurse_first_name'] = $nurse['first_name'] ?? 'Nurse';
+            $nurse['nurse_last_name']  = $nurse['last_name'] ?? '';
+        }
+
         $data = [
             'title' => 'Receptionist Dashboard',
             'user'  => [
@@ -44,39 +63,22 @@ class ReceptionistController extends Controller
                 'unpaid'  => 10,
                 'pending' => 5,
             ],
+
             'todayAppointments'    => $todayAppointments,
             'upcomingAppointments' => $upcomingAppointments,
             'finishedAppointments' => $finishedAppointments,
-        ];
 
-        // Data for dashboard
-        $data = [
-            'title' => 'Receptionist Dashboard',
-            'user'  => [
-                'fullName' => $session->get('fullName'),
-                'role'     => $session->get('role'),
-            ],
-            'stats' => [
-                'totalPatients'    => 10,
-                'totalAppointments'=> count($todayAppointments),
-                'pendingPayments'  => 0,
-            ],
-            'billingSummary' => [
-                'paid'    => 25,
-                'unpaid'  => 10,
-                'pending' => 5,
-            ],
+            'doctorSchedule'     => $doctorSchedule,
+            'nurseSchedule'      => $nurseSchedule,
+            'today'              => $today,
+
             'report' => [
                 'totalPatients' => 120,
                 'paidBills'     => 85,
                 'pendingBills'  => 25,
                 'overdue'       => 10,
             ],
-            'todayAppointments'    => $todayAppointments,
-            'upcomingAppointments' => $upcomingAppointments,
-            'finishedAppointments' => $finishedAppointments,
-            ];
-
+        ];
             return view('role_dashboard/receptionist/dashboard', $data);
         }
 
@@ -109,6 +111,7 @@ class ReceptionistController extends Controller
 
             $appointmentModel = new \App\Models\AppointmentModel();
             $doctorModel = new \App\Models\DoctorModel();
+            $nurseModel = new \App\Models\NurseModel();
 
             $user = [
             'fullName' => $session->get('fullName'),
@@ -121,6 +124,7 @@ class ReceptionistController extends Controller
                 'upcomingAppointments'=> $appointmentModel->getUpcomingAppointmentsWithDetails(),
                 'finishedAppointments'=> $appointmentModel->getCompletedAppointmentsWithDetails(),
                 'doctors'             => $doctorModel->getAllDoctors(),
+                'nurses'              => $nurseModel->getAllNurses(),
                 'user'                => $user,
             ];
 
@@ -130,11 +134,12 @@ class ReceptionistController extends Controller
         public function saveAppointment()
         {
             $appointmentModel = new AppointmentModel();
-            //check for conflicts
+            $scheduleModel = new \App\Models\ScheduleModel(); 
             $userModel        = new \App\Models\UserModel();
             $patientModel     = new \App\Models\PatientModel();
 
             $doctorId   = $this->request->getPost('doctor_id');
+            $nurseId    = $this->request->getPost('nurse_id'); // optional nurse
             $date       = $this->request->getPost('date');
             $time       = $this->request->getPost('time');
 
@@ -171,6 +176,7 @@ class ReceptionistController extends Controller
         $data = [
             'patient_id'       => $this->request->getPost('patient_id'),
             'doctor_id'        => $this->request->getPost('doctor_id'),
+            'nurse_id'        => $this->request->getPost('nurse_id'),
             'appointment_date' => $this->request->getPost('date'),
             'appointment_time' => $this->request->getPost('time'),
             'appointment_type' => $this->request->getPost('appointment_type'),
@@ -180,7 +186,27 @@ class ReceptionistController extends Controller
         ];
 
         if ($appointmentModel->save($data)) {
+            //Insert corresponding schedule to schedule viewer
+                $patient = (new \App\Models\PatientModel())->find($data['patient_id']);
+                $patientName = $patient ? $patient['first_name'].' '.$patient['last_name'] : 'Patient';
+
+                $scheduleModel->insert([
+                    'doctor_id'    => $doctorId,
+                    'nurse_id'     => $nurseId,
+                    'title'        => 'Patient Appointment',
+                    'description'  => 'Appointment with ' . $patientName,
+                    'schedule_date'=> $date,
+                    'start_time'   => $time,
+                    'end_time'     => date('H:i:s', strtotime($time.' +30 minutes')),
+                    'schedule_type'=> 'consultation',
+                    'location'     => 'Consultation Room',
+                    'patient_id'   => $data['patient_id'],
+                    'status'       => 'scheduled',
+                    'created_by'   => session()->get('userId'),
+                ]);
+
             return redirect()->to('role_dashboard/receptionist/appointmentbooking')->with('success', 'Appointment booked successfully');
+
         } else {
             return redirect()->back()->withInput()->with('errors', $appointmentModel->errors());
         }
@@ -213,30 +239,38 @@ class ReceptionistController extends Controller
     public function scheduleviewer()
     {
         $session = session();
+        $doctorModel = new DoctorModel();
+        $nurseModel  = new NurseModel();
+        $scheduleModel = new \App\Models\ScheduleModel(); 
 
-        // Dummy schedule data
-        $doctorSchedule = [
-            ['name' => 'Dr. Park', 'specialization' => 'Cardiology', 'days' => 'Mon, Wed, Fri'],
-            ['name' => 'Dr. Kim', 'specialization' => 'Pediatrics', 'days' => 'Tue, Thu'],
-            ['name' => 'Dr. Liu', 'specialization' => 'Psychiatrist', 'days' => 'Fri, Sat'],
-        ];
+        $schedules = $scheduleModel
+            ->select('
+                schedules.*,
+                doc.first_name as doctor_first_name,
+                doc.last_name as doctor_last_name,
+                nur.first_name as nurse_first_name,
+                nur.last_name as nurse_last_name,
+                patients.first_name as patient_first_name,
+                patients.last_name as patient_last_name
+            ')
+            ->join('users as doc', 'doc.id = schedules.doctor_id', 'left')
+            ->join('users as nur', 'nur.id = schedules.nurse_id', 'left')
+            ->join('patients', 'patients.id = schedules.patient_id', 'left')
+            ->orderBy('schedules.schedule_date', 'ASC')
+            ->orderBy('schedules.start_time', 'ASC')
+            ->findAll();
 
-        $nurseSchedule = [
-            ['name' => 'Nurse Chua', 'shift' => 'Morning', 'days' => 'Mon-Fri'],
-            ['name' => 'Nurse Xie', 'shift' => 'Night', 'days' => 'Mon-Sat'],
-            ['name' => 'Nurse Zhou', 'shift' => 'Night', 'days' => 'Sat-Mon'],
-        ];
 
         $data = [
             'title' => 'Doctor/Nurse Schedule Viewer',
-            'user' => [
+            'user'  => [
                 'fullName' => $session->get('fullName'),
                 'role'     => $session->get('role'),
             ],
-            'doctorSchedule' => $doctorSchedule,
-            'nurseSchedule'  => $nurseSchedule
+            'schedules' => $schedules,
+            'doctors'   => $doctorModel->getAllDoctors(),
+            'nurses'    => $nurseModel->getAllNurses(),
         ];
-
         return view('role_dashboard/receptionist/scheduleviewer', $data);
     }
 
