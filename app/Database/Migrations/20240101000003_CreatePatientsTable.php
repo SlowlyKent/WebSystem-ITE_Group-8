@@ -13,6 +13,7 @@ class CreatePatientsTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => true,
+                'unsigned' => true,
             ],
             'first_name' => [
                 'type' => 'VARCHAR',

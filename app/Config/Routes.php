@@ -38,6 +38,18 @@ $routes->get('doctor/profile', 'DoctorDashboardController::profile');
 $routes->post('doctor/profile', 'DoctorDashboardController::updateProfile');
 $routes->get('doctor/settings', 'DoctorDashboardController::settings');
 
+// Role-based dashboards - Receptionist
+$routes->group('role_dashboard/receptionist', function($routes) {
+$routes->get('dashboard', 'ReceptionistController::index');
+$routes->get('patientregistration', 'ReceptionistController::patientregistration');
+$routes->get('appointmentbooking', 'ReceptionistController::appointmentbooking');
+$routes->post('saveAppointment', 'ReceptionistController::saveAppointment');
+$routes->get('patientsearch_lookup', 'ReceptionistController::patientsearch_lookup');
+$routes->get('scheduleviewer', 'ReceptionistController::scheduleviewer');
+$routes->get('billing', 'ReceptionistController::billing');
+$routes->get('reports', 'ReceptionistController::reports');
+});
+
 // Role-based dashboards - Nurse
 $routes->get('nurse/dashboard', 'NurseDashboardController::index');
 $routes->get('nurse/patient-assignments', 'NurseDashboardController::patientAssignments');

@@ -13,7 +13,7 @@ class ScheduleModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'doctor_id', 'title', 'description', 'schedule_date', 'start_time', 'end_time',
+        'doctor_id', 'nurse_id', 'title', 'description', 'schedule_date', 'start_time', 'end_time',
         'schedule_type', 'location', 'patient_id', 'status', 'notes', 'created_by'
     ];
 
@@ -24,6 +24,7 @@ class ScheduleModel extends Model
 
     protected $validationRules = [
         'doctor_id' => 'required|integer',
+        'nurse_id' => 'permit_empty|integer',
         'description' => 'required|min_length[3]|max_length[255]',
         'schedule_date' => 'required|valid_date',
         'start_time' => 'required',
@@ -69,6 +70,27 @@ class ScheduleModel extends Model
             $builder->where('schedules.schedule_date >=', $startDate);
         }
         
+        if ($endDate) {
+            $builder->where('schedules.schedule_date <=', $endDate);
+        }
+
+        return $builder->findAll();
+    }
+
+    // Get schedules for a specific nurse
+    public function getSchedulesByNurse($nurseId, $startDate = null, $endDate = null)
+    {
+        $builder = $this->select('schedules.*, users.first_name as nurse_first_name, users.last_name as nurse_last_name, patients.first_name as patient_first_name, patients.last_name as patient_last_name')
+                        ->join('users', 'users.id = schedules.nurse_id', 'left')
+                        ->join('patients', 'patients.id = schedules.patient_id', 'left')
+                        ->where('schedules.nurse_id', $nurseId)
+                        ->orderBy('schedules.schedule_date', 'ASC')
+                        ->orderBy('schedules.start_time', 'ASC');
+
+        if ($startDate) {
+            $builder->where('schedules.schedule_date >=', $startDate);
+        }
+
         if ($endDate) {
             $builder->where('schedules.schedule_date <=', $endDate);
         }

@@ -27,24 +27,24 @@ class CreatePrescriptionsTable extends Migration
             ],
             'patient_name' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '200',
+                'constraint' => 200,
             ],
             'medication_name' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '200',
+                'constraint' => 200,
             ],
             'dosage' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 100,
             ],
             'frequency' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 100,
                 'null'       => true,
             ],
             'duration' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 100,
                 'null'       => true,
             ],
             'priority' => [
@@ -62,72 +62,28 @@ class CreatePrescriptionsTable extends Migration
                 'null' => true,
             ],
             'prescribed_date' => [
-                'type'    => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'type' => 'DATETIME',
+                'null' => false,
             ],
             'created_at' => [
-                'type'    => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'type' => 'DATETIME',
+                'null' => true,
             ],
             'updated_at' => [
-                'type'    => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+                'type' => 'DATETIME',
+                'null' => true,
             ],
         ]);
 
         $this->forge->addKey('id', true);
         $this->forge->addKey('patient_id');
         $this->forge->addKey('doctor_id');
-        
-        // Add foreign key constraint
+
+        // Foreign key constraints
         $this->forge->addForeignKey('patient_id', 'patients', 'id', 'CASCADE', 'CASCADE');
-        
+        $this->forge->addForeignKey('doctor_id', 'users', 'id', 'CASCADE', 'CASCADE');
+
         $this->forge->createTable('prescriptions');
-
-        // Insert sample data
-        $data = [
-            [
-                'patient_id' => 1,
-                'doctor_id' => 1,
-                'patient_name' => 'John Doe',
-                'medication_name' => 'Amoxicillin',
-                'dosage' => '500mg',
-                'frequency' => '3 times daily',
-                'duration' => '7 days',
-                'priority' => 'medium',
-                'status' => 'active',
-                'notes' => 'Take with food to avoid stomach upset',
-                'prescribed_date' => '2024-01-20 10:30:00'
-            ],
-            [
-                'patient_id' => 2,
-                'doctor_id' => 1,
-                'patient_name' => 'Jane Smith',
-                'medication_name' => 'Lisinopril',
-                'dosage' => '10mg',
-                'frequency' => 'Once daily',
-                'duration' => '30 days',
-                'priority' => 'high',
-                'status' => 'active',
-                'notes' => 'Monitor blood pressure regularly',
-                'prescribed_date' => '2024-01-19 14:15:00'
-            ],
-            [
-                'patient_id' => 3,
-                'doctor_id' => 1,
-                'patient_name' => 'Mike Johnson',
-                'medication_name' => 'Ibuprofen',
-                'dosage' => '400mg',
-                'frequency' => 'As needed',
-                'duration' => '14 days',
-                'priority' => 'low',
-                'status' => 'completed',
-                'notes' => 'For pain relief, maximum 3 times per day',
-                'prescribed_date' => '2024-01-18 09:45:00'
-            ]
-        ];
-
-        $this->db->table('prescriptions')->insertBatch($data);
     }
 
     public function down()

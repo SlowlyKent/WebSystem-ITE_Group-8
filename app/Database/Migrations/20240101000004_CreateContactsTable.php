@@ -13,10 +13,12 @@ class CreateContactsTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => true,
+                'unsigned' => true,
             ],
             'patient_id' => [
                 'type' => 'INT',
                 'constraint' => 11,
+                'unsigned' => true,
             ],
             'phone' => [
                 'type' => 'VARCHAR',

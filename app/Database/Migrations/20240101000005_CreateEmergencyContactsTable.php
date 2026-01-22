@@ -13,10 +13,12 @@ class CreateEmergencyContactsTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => true,
+                'unsigned' => true,
             ],
             'patient_id' => [
                 'type' => 'INT',
                 'constraint' => 11,
+                'unsigned' => true,
             ],
             'name' => [
                 'type' => 'VARCHAR',

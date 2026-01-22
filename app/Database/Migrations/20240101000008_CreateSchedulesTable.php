@@ -20,6 +20,12 @@ class CreateSchedulesTable extends Migration
                 'constraint' => 11,
                 'unsigned' => true,
             ],
+            'nurse_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'null' => true,
+            ],
             'title' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -85,11 +91,13 @@ class CreateSchedulesTable extends Migration
         
         // Add indexes first
         $this->db->query('ALTER TABLE schedules ADD INDEX idx_doctor_date (doctor_id, schedule_date)');
+        $this->db->query('ALTER TABLE schedules ADD INDEX idx_nurse_date (nurse_id, schedule_date)');
         $this->db->query('ALTER TABLE schedules ADD INDEX idx_schedule_date (schedule_date)');
         $this->db->query('ALTER TABLE schedules ADD INDEX idx_status (status)');
         
         // Add foreign key constraints (only for users table since patients table structure may vary)
         $this->db->query('ALTER TABLE schedules ADD CONSTRAINT fk_schedules_doctor FOREIGN KEY (doctor_id) REFERENCES users(id) ON DELETE CASCADE');
+        $this->db->query('ALTER TABLE schedules ADD CONSTRAINT fk_schedules_nurse FOREIGN KEY (nurse_id) REFERENCES users(id) ON DELETE SET NULL');
         $this->db->query('ALTER TABLE schedules ADD CONSTRAINT fk_schedules_created_by FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE');
     }
 
